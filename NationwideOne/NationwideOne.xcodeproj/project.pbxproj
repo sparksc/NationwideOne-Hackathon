@@ -55,6 +55,7 @@
 		71FBB5321D41DE5400A9F947 /* ic-rss-feed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 71FBB5311D41DE5400A9F947 /* ic-rss-feed@2x.png */; };
 		71FBB5341D41E6AD00A9F947 /* ic-checked-check-box@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 71FBB5331D41E6AD00A9F947 /* ic-checked-check-box@2x.png */; };
 		71FBB5361D41E7A200A9F947 /* ic-unchecked-check-box@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 71FBB5351D41E7A200A9F947 /* ic-unchecked-check-box@2x.png */; };
+		71FBB5381D41F1C200A9F947 /* SMESearchListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71FBB5371D41F1C200A9F947 /* SMESearchListViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -110,6 +111,7 @@
 		71FBB5311D41DE5400A9F947 /* ic-rss-feed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic-rss-feed@2x.png"; sourceTree = "<group>"; };
 		71FBB5331D41E6AD00A9F947 /* ic-checked-check-box@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic-checked-check-box@2x.png"; sourceTree = "<group>"; };
 		71FBB5351D41E7A200A9F947 /* ic-unchecked-check-box@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic-unchecked-check-box@2x.png"; sourceTree = "<group>"; };
+		71FBB5371D41F1C200A9F947 /* SMESearchListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SMESearchListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -229,6 +231,7 @@
 				718EBBBB1D4172750071740A /* HomeViewController.swift */,
 				718EBBBD1D4174160071740A /* SideMenuViewController.swift */,
 				71FBB5211D41C93000A9F947 /* ProfileViewController.swift */,
+				71FBB5371D41F1C200A9F947 /* SMESearchListViewController.swift */,
 			);
 			name = "View Controllers";
 			path = "NationwideOne/View Controllers";
@@ -411,6 +414,7 @@
 				710CAF4C1D415BA40003EA87 /* SignInViewController.swift in Sources */,
 				718EBBBE1D4174160071740A /* SideMenuViewController.swift in Sources */,
 				718EBBC21D4174610071740A /* SideMenuTableViewDataSource.swift in Sources */,
+				71FBB5381D41F1C200A9F947 /* SMESearchListViewController.swift in Sources */,
 				710CAF4E1D415DAC0003EA87 /* UniversalResources.swift in Sources */,
 				718EBBBC1D4172750071740A /* HomeViewController.swift in Sources */,
 			);
