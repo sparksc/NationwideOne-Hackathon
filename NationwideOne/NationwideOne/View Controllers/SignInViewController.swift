@@ -930,7 +930,7 @@ class SignInViewController: UIViewController, UITextViewDelegate
     /// </summary>
     private func setUpRememberMe()
     {
-        // set up the save Credit Card information Label
+        // set up the remember me Label
         rememberMeLabel = UILabel()
         rememberMeLabel.text = "Remember Me"
         rememberMeLabel.textColor = UIColor.blackColor()
@@ -940,7 +940,7 @@ class SignInViewController: UIViewController, UITextViewDelegate
         yPos += 7.5
         rememberMeLabel.frame = CGRect(origin: CGPoint(x: passwordTextView.frame.origin.x, y: yPos), size: size)
         
-        // set up the save Credit Card information Image View
+        // set up the remember me Button
         rememberMeButton = UIButton ()
         rememberMeButton.setImage(UniversalResources.CIRCLE_OUTLINE_APP_COLOR_IMAGE, forState: UIControlState.Normal)
         rememberMeButton.backgroundColor = UIColor.clearColor()

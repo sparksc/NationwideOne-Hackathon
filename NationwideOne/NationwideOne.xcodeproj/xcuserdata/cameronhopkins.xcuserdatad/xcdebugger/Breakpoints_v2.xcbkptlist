@@ -186,11 +186,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NationwideOne/View Controllers/HomeViewController.swift"
-            timestampString = "490836231.798881"
+            timestampString = "490844556.312903"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "273"
-            endingLineNumber = "273"
+            startingLineNumber = "311"
+            endingLineNumber = "311"
             landmarkName = "setUpNavigationItems()"
             landmarkType = "5">
          </BreakpointContent>
@@ -218,12 +218,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NationwideOne/View Controllers/HomeViewController.swift"
-            timestampString = "490840869.248104"
+            timestampString = "490844556.312903"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "256"
-            endingLineNumber = "256"
-            landmarkName = "setUpNavigationItems()"
+            startingLineNumber = "294"
+            endingLineNumber = "294"
+            landmarkName = "removeBlurEffectNoAnimation()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

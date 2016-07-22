@@ -71,6 +71,12 @@ class UniversalResources
     static let INSTAGRAM_IMAGE = UIImage (named: "instagram_icon.png")!
     static let PINTEREST_IMAGE = UIImage (named: "pinterest_icon.png")!
     static let TWITTER_IMAGE = UIImage (named: "twitter_icon.png")!
+    static let EMAIL_IMAGE = UIImage (named: "ic-message@2x.png")!
+    static let CALENDAR_IMAGE = UIImage (named: "ic-calendar@2x.png")!
+    static let SPOT_NOTE_IMAGE = UIImage (named: "ic-spot-note@2x.png")!
+    static let ANYTHING_LOCATOR_IMAGE = UIImage (named: "ic-location@2x.png")!
+    static let PROFILE_IMAGE = UIImage (named: "ic-profile-pic@2x.png")!
+    static let LOGO_TRANSPARENT_IMAGE = UIImage (named: "ic-logo-transparent@2x.png")!
     
     
     

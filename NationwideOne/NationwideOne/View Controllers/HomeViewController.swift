@@ -22,14 +22,36 @@ class HomeViewController: UIViewController
     // this represent the Navigation Bar Button Item that will open the side menu
     private var menuBarButtonItem: UIBarButtonItem!
     
+    // this represent the Navigation Bar Button Item that show the logo
+    private var logoBarButtonItem: UIBarButtonItem!
+    
     // the Button that will display a blur View over the screen
     private var blurEffectButton: UIButton!
     
     // the Button that will display a blur View over the Navigation Bar
     private var blurEffectButton2: UIButton!
     
+    // the Button that will allow user to view their email
+    private var emailButton: UIButton!
+    
+    // the Button that will allow user to view their calendar
+    private var calendarButton: UIButton!
+    
+    // the Button that will allow user to view their spot note
+    private var spotNoteButton: UIButton!
+    
+    // the Button that will allow user to view anything locator
+    private var anythingLocatorButton: UIButton!
+    
+    // the Button that will allow user to view their profile
+    private var viewProfileButton: UIButton!
+    
     // the CGFloat that will contain the total height of the navigation bar and status bar
-    private let navigationAndStatusBarHeight: CGFloat = 64
+    private var navigationAndStatusBarHeight: CGFloat = 64
+    
+    // the Search Bar that will allow users to search
+    private let SMESearchBar: UISearchBar = UISearchBar()
+    
     
     
     
@@ -102,6 +124,44 @@ class HomeViewController: UIViewController
     
     
     
+    // MARK: - all functions that relate to the objects that calls these functions through an action
+    
+    /// <summary>
+    /// Open the users email.
+    /// </summary>
+    /// <param name="sender"> The object that called this funcion.</param>
+    func openEmail(sender: UIButton)
+    {
+        
+    }
+    
+    /// <summary>
+    /// Open the users calendar
+    /// </summary>
+    /// <param name="sender"> The object that called this funcion.</param>
+    func openCalendar(sender: UIButton)
+    {
+        
+    }
+    
+    /// <summary>
+    /// Open Spot Note.
+    /// </summary>
+    /// <param name="sender"> The object that called this funcion.</param>
+    func openSpotNote(sender: UIButton)
+    {
+        
+    }
+    
+    /// <summary>
+    /// Open Anything Locator.
+    /// </summary>
+    /// <param name="sender"> The object that called this funcion.</param>
+    func openAnythingLocator(sender: UIButton)
+    {
+        
+    }
+    
     
     // MARK: - all functions that relate to the internal class for public accessing
     
@@ -114,7 +174,7 @@ class HomeViewController: UIViewController
         setUpNavigationItems()
         
         // set up the total height needed to take account for when setting up the View
-        //navigationAndStatusBarHeight =  navigationController!.navigationBar.frame.height + UIApplication.sharedApplication().statusBarFrame.height
+        navigationAndStatusBarHeight =  navigationController!.navigationBar.frame.height + UIApplication.sharedApplication().statusBarFrame.height
         
         // set up the blur effect Button and the attributes
         blurEffectButton = UIButton(type: UIButtonType.Custom)
@@ -130,6 +190,12 @@ class HomeViewController: UIViewController
         blurEffectButton2.alpha = 0.75
         blurEffectButton2.enabled = false
         blurEffectButton2.addTarget(self, action: #selector(HomeViewController.removeBlurEffect), forControlEvents: UIControlEvents.TouchUpInside)
+        
+        // set up the search bar
+        setUpSMESearchBar()
+        
+        // set up the app buttons
+        setUpAppButtons()
     }
     
     /// <summary>
@@ -273,5 +339,65 @@ class HomeViewController: UIViewController
             (self.revealViewController().rearViewController as! SideMenuViewController).hvc = self
             (self.revealViewController().rearViewController as! SideMenuViewController).currentCaller = "HomeViewController"
         }
+    }
+    
+    /// <summary>
+    /// Sets up the SME search bar
+    /// </summary>
+    private func setUpSMESearchBar()
+    {
+        // set up the frame
+        SMESearchBar.frame = CGRect(x: view.center.x, y: 20, width: 100, height: 30)
+        SMESearchBar.text = "I need help with..."
+        
+        // add the Views
+        view.addSubview(SMESearchBar)
+    }
+    
+    /// <summary>
+    /// Sets up the app Buttons
+    /// </summary>
+    private func setUpAppButtons()
+    {
+        // the Button width/height
+        let buttonWidth: CGFloat = 30
+        let buttonHeight: CGFloat = 30
+        
+        // set up the email Button
+        var yPos = SMESearchBar.frame.origin.y + SMESearchBar.frame.height + 10
+        var xPos = SMESearchBar.frame.origin.x
+        emailButton = UIButton ()
+        emailButton.setImage(UniversalResources.EMAIL_IMAGE, forState: UIControlState.Normal)
+        emailButton.backgroundColor = UIColor.clearColor()
+        emailButton.frame = CGRect(x: xPos, y: yPos, width: buttonWidth, height: buttonHeight)
+        emailButton.addTarget(self, action: #selector(HomeViewController.openEmail(_:)), forControlEvents: UIControlEvents.TouchUpInside)
+        
+        xPos = SMESearchBar.frame.origin.x + SMESearchBar.frame.width - buttonWidth
+        calendarButton = UIButton ()
+        calendarButton.setImage(UniversalResources.CALENDAR_IMAGE, forState: UIControlState.Normal)
+        calendarButton.backgroundColor = UIColor.clearColor()
+        calendarButton.frame = CGRect(x: xPos, y: yPos, width: buttonWidth, height: buttonHeight)
+        calendarButton.addTarget(self, action: #selector(HomeViewController.openCalendar(_:)), forControlEvents: UIControlEvents.TouchUpInside)
+        
+        xPos = SMESearchBar.frame.origin.x
+        yPos = emailButton.frame.origin.y + emailButton.frame.height + 10
+        spotNoteButton = UIButton ()
+        spotNoteButton.setImage(UniversalResources.SPOT_NOTE_IMAGE, forState: UIControlState.Normal)
+        spotNoteButton.backgroundColor = UIColor.clearColor()
+        spotNoteButton.frame = CGRect(x: xPos, y: yPos, width: buttonWidth, height: buttonHeight)
+        spotNoteButton.addTarget(self, action: #selector(HomeViewController.openSpotNote(_:)), forControlEvents: UIControlEvents.TouchUpInside)
+        
+        xPos = calendarButton.frame.origin.x
+        anythingLocatorButton = UIButton ()
+        anythingLocatorButton.setImage(UniversalResources.ANYTHING_LOCATOR_IMAGE, forState: UIControlState.Normal)
+        anythingLocatorButton.backgroundColor = UIColor.clearColor()
+        anythingLocatorButton.frame = CGRect(x: xPos, y: yPos, width: buttonWidth, height: buttonHeight)
+        anythingLocatorButton.addTarget(self, action: #selector(HomeViewController.openAnythingLocator(_:)), forControlEvents: UIControlEvents.TouchUpInside)
+        
+        // add the Views
+        view.addSubview(emailButton)
+        view.addSubview(calendarButton)
+        view.addSubview(spotNoteButton)
+        view.addSubview(anythingLocatorButton)
     }
 }
