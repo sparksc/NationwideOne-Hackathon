@@ -1,0 +1,529 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		710CAF0E1D41575F0003EA87 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 710CAF0D1D41575F0003EA87 /* AppDelegate.swift */; };
+		710CAF131D41575F0003EA87 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 710CAF111D41575F0003EA87 /* Main.storyboard */; };
+		710CAF151D41575F0003EA87 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 710CAF141D41575F0003EA87 /* Assets.xcassets */; };
+		710CAF181D41575F0003EA87 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 710CAF161D41575F0003EA87 /* LaunchScreen.storyboard */; };
+		710CAF4A1D415AEA0003EA87 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 710CAF491D415AEA0003EA87 /* SWRevealViewController.m */; };
+		710CAF4C1D415BA40003EA87 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 710CAF4B1D415BA40003EA87 /* SignInViewController.swift */; };
+		710CAF4E1D415DAC0003EA87 /* UniversalResources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 710CAF4D1D415DAC0003EA87 /* UniversalResources.swift */; };
+		710CAF541D415F4B0003EA87 /* nationwide-one-blue-background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 710CAF521D415F4B0003EA87 /* nationwide-one-blue-background.jpg */; };
+		710CAF551D415F4B0003EA87 /* nationwide-one-loading.png in Resources */ = {isa = PBXBuildFile; fileRef = 710CAF531D415F4B0003EA87 /* nationwide-one-loading.png */; };
+		718EBBAF1D4170880071740A /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718EBBAE1D4170880071740A /* UserProfile.swift */; };
+		718EBBB21D4171650071740A /* cache.txt in Resources */ = {isa = PBXBuildFile; fileRef = 718EBBB11D4171650071740A /* cache.txt */; };
+		718EBBB71D4171840071740A /* ContactUs.txt in Resources */ = {isa = PBXBuildFile; fileRef = 718EBBB31D4171840071740A /* ContactUs.txt */; };
+		718EBBB81D4171840071740A /* ContactUsIssues.txt in Resources */ = {isa = PBXBuildFile; fileRef = 718EBBB41D4171840071740A /* ContactUsIssues.txt */; };
+		718EBBB91D4171840071740A /* MenuItems.txt in Resources */ = {isa = PBXBuildFile; fileRef = 718EBBB51D4171840071740A /* MenuItems.txt */; };
+		718EBBBA1D4171840071740A /* Profiles.txt in Resources */ = {isa = PBXBuildFile; fileRef = 718EBBB61D4171840071740A /* Profiles.txt */; };
+		718EBBBC1D4172750071740A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718EBBBB1D4172750071740A /* HomeViewController.swift */; };
+		718EBBBE1D4174160071740A /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718EBBBD1D4174160071740A /* SideMenuViewController.swift */; };
+		718EBBC01D41744F0071740A /* SideMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718EBBBF1D41744F0071740A /* SideMenuTableViewCell.swift */; };
+		718EBBC21D4174610071740A /* SideMenuTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718EBBC11D4174610071740A /* SideMenuTableViewDataSource.swift */; };
+		718EBBC41D4174DF0071740A /* MenuOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718EBBC31D4174DF0071740A /* MenuOption.swift */; };
+		718EBBC61D41752F0071740A /* LoadingAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718EBBC51D41752F0071740A /* LoadingAlertViewController.swift */; };
+		718EBBC91D41793E0071740A /* ic-circle-check-app-color@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 718EBBC71D41793E0071740A /* ic-circle-check-app-color@2x.png */; };
+		718EBBCA1D41793E0071740A /* ic-circle-outline-app-color@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 718EBBC81D41793E0071740A /* ic-circle-outline-app-color@2x.png */; };
+		718EBBCF1D4190190071740A /* ic-arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 718EBBCE1D4190190071740A /* ic-arrow@2x.png */; };
+		718EBBD11D4190210071740A /* ic-close@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 718EBBD01D4190210071740A /* ic-close@2x.png */; };
+		718EBBD31D4190280071740A /* ic-feedback@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 718EBBD21D4190280071740A /* ic-feedback@2x.png */; };
+		718EBBD51D4190320071740A /* ic-home-black@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 718EBBD41D4190320071740A /* ic-home-black@2x.png */; };
+		718EBBD71D4190430071740A /* ic-logout@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 718EBBD61D4190430071740A /* ic-logout@2x.png */; };
+		718EBBD91D4190490071740A /* ic-menu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 718EBBD81D4190490071740A /* ic-menu@2x.png */; };
+		718EBBDB1D4190500071740A /* ic-phone-outline-black@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 718EBBDA1D4190500071740A /* ic-phone-outline-black@2x.png */; };
+		718EBBDD1D4190570071740A /* ic-settings@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 718EBBDC1D4190570071740A /* ic-settings@2x.png */; };
+		718EBBDF1D41905E0071740A /* ic-suggestion@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 718EBBDE1D41905E0071740A /* ic-suggestion@2x.png */; };
+		718EBBE41D4199F40071740A /* ic-nationwide-one.png in Resources */ = {isa = PBXBuildFile; fileRef = 718EBBE31D4199F40071740A /* ic-nationwide-one.png */; };
+		718EBBE61D419B300071740A /* nationwide-one-loading-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 718EBBE51D419B300071740A /* nationwide-one-loading-2.png */; };
+		718EBBE81D419EAC0071740A /* nationwide-one-loading-iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = 718EBBE71D419EAC0071740A /* nationwide-one-loading-iPad.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		710CAF0A1D41575F0003EA87 /* NationwideOne.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NationwideOne.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		710CAF0D1D41575F0003EA87 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		710CAF121D41575F0003EA87 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		710CAF141D41575F0003EA87 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		710CAF171D41575F0003EA87 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		710CAF191D41575F0003EA87 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		710CAF481D415AEA0003EA87 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWRevealViewController.h; path = NationwideOne/SWRevealViewController/SWRevealViewController.h; sourceTree = SOURCE_ROOT; };
+		710CAF491D415AEA0003EA87 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWRevealViewController.m; path = NationwideOne/SWRevealViewController/SWRevealViewController.m; sourceTree = SOURCE_ROOT; };
+		710CAF4B1D415BA40003EA87 /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		710CAF4D1D415DAC0003EA87 /* UniversalResources.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UniversalResources.swift; sourceTree = "<group>"; };
+		710CAF521D415F4B0003EA87 /* nationwide-one-blue-background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "nationwide-one-blue-background.jpg"; path = "NationwideOne/Images/iPhone Icons/nationwide-one-blue-background.jpg"; sourceTree = SOURCE_ROOT; };
+		710CAF531D415F4B0003EA87 /* nationwide-one-loading.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "nationwide-one-loading.png"; path = "NationwideOne/Images/iPhone Icons/nationwide-one-loading.png"; sourceTree = SOURCE_ROOT; };
+		718EBBAE1D4170880071740A /* UserProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
+		718EBBB11D4171650071740A /* cache.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = cache.txt; sourceTree = "<group>"; };
+		718EBBB31D4171840071740A /* ContactUs.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ContactUs.txt; sourceTree = "<group>"; };
+		718EBBB41D4171840071740A /* ContactUsIssues.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ContactUsIssues.txt; sourceTree = "<group>"; };
+		718EBBB51D4171840071740A /* MenuItems.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = MenuItems.txt; sourceTree = "<group>"; };
+		718EBBB61D4171840071740A /* Profiles.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Profiles.txt; sourceTree = "<group>"; };
+		718EBBBB1D4172750071740A /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		718EBBBD1D4174160071740A /* SideMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
+		718EBBBF1D41744F0071740A /* SideMenuTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuTableViewCell.swift; sourceTree = "<group>"; };
+		718EBBC11D4174610071740A /* SideMenuTableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuTableViewDataSource.swift; sourceTree = "<group>"; };
+		718EBBC31D4174DF0071740A /* MenuOption.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuOption.swift; sourceTree = "<group>"; };
+		718EBBC51D41752F0071740A /* LoadingAlertViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingAlertViewController.swift; sourceTree = "<group>"; };
+		718EBBC71D41793E0071740A /* ic-circle-check-app-color@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ic-circle-check-app-color@2x.png"; path = "NationwideOne/Images/Icons/ic-circle-check-app-color@2x.png"; sourceTree = SOURCE_ROOT; };
+		718EBBC81D41793E0071740A /* ic-circle-outline-app-color@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ic-circle-outline-app-color@2x.png"; path = "NationwideOne/Images/Icons/ic-circle-outline-app-color@2x.png"; sourceTree = SOURCE_ROOT; };
+		718EBBCD1D417DCB0071740A /* NationwideOne-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "NationwideOne-Bridging-Header.h"; path = "NationwideOne/Bridger Files/NationwideOne-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
+		718EBBCE1D4190190071740A /* ic-arrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ic-arrow@2x.png"; path = "NationwideOne/Images/Icons/ic-arrow@2x.png"; sourceTree = SOURCE_ROOT; };
+		718EBBD01D4190210071740A /* ic-close@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ic-close@2x.png"; path = "NationwideOne/Images/Icons/ic-close@2x.png"; sourceTree = SOURCE_ROOT; };
+		718EBBD21D4190280071740A /* ic-feedback@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ic-feedback@2x.png"; path = "NationwideOne/Images/Icons/ic-feedback@2x.png"; sourceTree = SOURCE_ROOT; };
+		718EBBD41D4190320071740A /* ic-home-black@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ic-home-black@2x.png"; path = "NationwideOne/Images/Icons/ic-home-black@2x.png"; sourceTree = SOURCE_ROOT; };
+		718EBBD61D4190430071740A /* ic-logout@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ic-logout@2x.png"; path = "NationwideOne/Images/Icons/ic-logout@2x.png"; sourceTree = SOURCE_ROOT; };
+		718EBBD81D4190490071740A /* ic-menu@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ic-menu@2x.png"; path = "NationwideOne/Images/Icons/ic-menu@2x.png"; sourceTree = SOURCE_ROOT; };
+		718EBBDA1D4190500071740A /* ic-phone-outline-black@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ic-phone-outline-black@2x.png"; path = "NationwideOne/Images/Icons/ic-phone-outline-black@2x.png"; sourceTree = SOURCE_ROOT; };
+		718EBBDC1D4190570071740A /* ic-settings@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ic-settings@2x.png"; path = "NationwideOne/Images/Icons/ic-settings@2x.png"; sourceTree = SOURCE_ROOT; };
+		718EBBDE1D41905E0071740A /* ic-suggestion@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ic-suggestion@2x.png"; path = "NationwideOne/Images/Icons/ic-suggestion@2x.png"; sourceTree = SOURCE_ROOT; };
+		718EBBE31D4199F40071740A /* ic-nationwide-one.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic-nationwide-one.png"; sourceTree = "<group>"; };
+		718EBBE51D419B300071740A /* nationwide-one-loading-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "nationwide-one-loading-2.png"; path = "NationwideOne/Images/iPhone Icons/nationwide-one-loading-2.png"; sourceTree = SOURCE_ROOT; };
+		718EBBE71D419EAC0071740A /* nationwide-one-loading-iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "nationwide-one-loading-iPad.png"; path = "NationwideOne/Images/iPhone Icons/nationwide-one-loading-iPad.png"; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		710CAF071D41575F0003EA87 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		710CAF011D41575F0003EA87 = {
+			isa = PBXGroup;
+			children = (
+				710CAF0C1D41575F0003EA87 /* NationwideOne */,
+				710CAF0B1D41575F0003EA87 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		710CAF0B1D41575F0003EA87 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				710CAF0A1D41575F0003EA87 /* NationwideOne.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		710CAF0C1D41575F0003EA87 /* NationwideOne */ = {
+			isa = PBXGroup;
+			children = (
+				710CAF201D4158420003EA87 /* Alert View Controllers */,
+				710CAF1F1D4157970003EA87 /* Assets */,
+				718EBBCC1D417D9A0071740A /* Bridger Files */,
+				718EBBB01D4171350071740A /* Cache */,
+				710CAF221D4158560003EA87 /* Custom Table View Data Source and Cell */,
+				710CAF231D4158630003EA87 /* Images */,
+				710CAF241D4158690003EA87 /* SWRevealViewController */,
+				710CAF251D4158740003EA87 /* Universal */,
+				710CAF261D41587A0003EA87 /* View Controllers */,
+				710CAF0D1D41575F0003EA87 /* AppDelegate.swift */,
+				710CAF141D41575F0003EA87 /* Assets.xcassets */,
+				710CAF191D41575F0003EA87 /* Info.plist */,
+				710CAF161D41575F0003EA87 /* LaunchScreen.storyboard */,
+				710CAF111D41575F0003EA87 /* Main.storyboard */,
+			);
+			path = NationwideOne;
+			sourceTree = "<group>";
+		};
+		710CAF1F1D4157970003EA87 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				718EBBB31D4171840071740A /* ContactUs.txt */,
+				718EBBB41D4171840071740A /* ContactUsIssues.txt */,
+				718EBBB51D4171840071740A /* MenuItems.txt */,
+				718EBBB61D4171840071740A /* Profiles.txt */,
+			);
+			name = Assets;
+			path = NationwideOne/Assets;
+			sourceTree = SOURCE_ROOT;
+		};
+		710CAF201D4158420003EA87 /* Alert View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				718EBBC51D41752F0071740A /* LoadingAlertViewController.swift */,
+			);
+			name = "Alert View Controllers";
+			path = "NationwideOne/Alert View Controllers";
+			sourceTree = SOURCE_ROOT;
+		};
+		710CAF221D4158560003EA87 /* Custom Table View Data Source and Cell */ = {
+			isa = PBXGroup;
+			children = (
+				718EBBBF1D41744F0071740A /* SideMenuTableViewCell.swift */,
+				718EBBC11D4174610071740A /* SideMenuTableViewDataSource.swift */,
+			);
+			name = "Custom Table View Data Source and Cell";
+			path = "NationwideOne/Custom Table View Data Source and Cell";
+			sourceTree = SOURCE_ROOT;
+		};
+		710CAF231D4158630003EA87 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				718EBBE01D4197930071740A /* iPhone Icons */,
+				710CAF511D415EA50003EA87 /* Icons */,
+			);
+			name = Images;
+			path = NationwideOne/Images;
+			sourceTree = SOURCE_ROOT;
+		};
+		710CAF241D4158690003EA87 /* SWRevealViewController */ = {
+			isa = PBXGroup;
+			children = (
+				710CAF481D415AEA0003EA87 /* SWRevealViewController.h */,
+				710CAF491D415AEA0003EA87 /* SWRevealViewController.m */,
+			);
+			name = SWRevealViewController;
+			path = NationwideOne/SWRevealViewController;
+			sourceTree = SOURCE_ROOT;
+		};
+		710CAF251D4158740003EA87 /* Universal */ = {
+			isa = PBXGroup;
+			children = (
+				710CAF4D1D415DAC0003EA87 /* UniversalResources.swift */,
+				718EBBAE1D4170880071740A /* UserProfile.swift */,
+				718EBBC31D4174DF0071740A /* MenuOption.swift */,
+			);
+			name = Universal;
+			path = NationwideOne/Universal;
+			sourceTree = SOURCE_ROOT;
+		};
+		710CAF261D41587A0003EA87 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				710CAF4B1D415BA40003EA87 /* SignInViewController.swift */,
+				718EBBBB1D4172750071740A /* HomeViewController.swift */,
+				718EBBBD1D4174160071740A /* SideMenuViewController.swift */,
+			);
+			name = "View Controllers";
+			path = "NationwideOne/View Controllers";
+			sourceTree = SOURCE_ROOT;
+		};
+		710CAF511D415EA50003EA87 /* Icons */ = {
+			isa = PBXGroup;
+			children = (
+				718EBBDE1D41905E0071740A /* ic-suggestion@2x.png */,
+				718EBBDC1D4190570071740A /* ic-settings@2x.png */,
+				718EBBDA1D4190500071740A /* ic-phone-outline-black@2x.png */,
+				718EBBD81D4190490071740A /* ic-menu@2x.png */,
+				718EBBD61D4190430071740A /* ic-logout@2x.png */,
+				718EBBD41D4190320071740A /* ic-home-black@2x.png */,
+				718EBBD21D4190280071740A /* ic-feedback@2x.png */,
+				718EBBD01D4190210071740A /* ic-close@2x.png */,
+				718EBBCE1D4190190071740A /* ic-arrow@2x.png */,
+				718EBBC71D41793E0071740A /* ic-circle-check-app-color@2x.png */,
+				718EBBC81D41793E0071740A /* ic-circle-outline-app-color@2x.png */,
+			);
+			name = Icons;
+			path = NationwideOne/Images/Icons;
+			sourceTree = SOURCE_ROOT;
+		};
+		718EBBB01D4171350071740A /* Cache */ = {
+			isa = PBXGroup;
+			children = (
+				718EBBB11D4171650071740A /* cache.txt */,
+			);
+			name = Cache;
+			path = NationwideOne/Cache;
+			sourceTree = SOURCE_ROOT;
+		};
+		718EBBCC1D417D9A0071740A /* Bridger Files */ = {
+			isa = PBXGroup;
+			children = (
+				718EBBCD1D417DCB0071740A /* NationwideOne-Bridging-Header.h */,
+			);
+			name = "Bridger Files";
+			path = "NationwideOne/Bridger Files";
+			sourceTree = SOURCE_ROOT;
+		};
+		718EBBE01D4197930071740A /* iPhone Icons */ = {
+			isa = PBXGroup;
+			children = (
+				718EBBE71D419EAC0071740A /* nationwide-one-loading-iPad.png */,
+				718EBBE51D419B300071740A /* nationwide-one-loading-2.png */,
+				718EBBE31D4199F40071740A /* ic-nationwide-one.png */,
+				710CAF521D415F4B0003EA87 /* nationwide-one-blue-background.jpg */,
+				710CAF531D415F4B0003EA87 /* nationwide-one-loading.png */,
+			);
+			name = "iPhone Icons";
+			path = "NationwideOne/Images/iPhone Icons";
+			sourceTree = SOURCE_ROOT;
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		710CAF091D41575F0003EA87 /* NationwideOne */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 710CAF1C1D41575F0003EA87 /* Build configuration list for PBXNativeTarget "NationwideOne" */;
+			buildPhases = (
+				710CAF061D41575F0003EA87 /* Sources */,
+				710CAF071D41575F0003EA87 /* Frameworks */,
+				710CAF081D41575F0003EA87 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NationwideOne;
+			productName = NationwideOne;
+			productReference = 710CAF0A1D41575F0003EA87 /* NationwideOne.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		710CAF021D41575F0003EA87 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Cameron Hopkins";
+				TargetAttributes = {
+					710CAF091D41575F0003EA87 = {
+						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = NQ739FUVTH;
+					};
+				};
+			};
+			buildConfigurationList = 710CAF051D41575F0003EA87 /* Build configuration list for PBXProject "NationwideOne" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 710CAF011D41575F0003EA87;
+			productRefGroup = 710CAF0B1D41575F0003EA87 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				710CAF091D41575F0003EA87 /* NationwideOne */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		710CAF081D41575F0003EA87 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				718EBBC91D41793E0071740A /* ic-circle-check-app-color@2x.png in Resources */,
+				718EBBBA1D4171840071740A /* Profiles.txt in Resources */,
+				718EBBE61D419B300071740A /* nationwide-one-loading-2.png in Resources */,
+				710CAF541D415F4B0003EA87 /* nationwide-one-blue-background.jpg in Resources */,
+				718EBBD31D4190280071740A /* ic-feedback@2x.png in Resources */,
+				718EBBDF1D41905E0071740A /* ic-suggestion@2x.png in Resources */,
+				718EBBB91D4171840071740A /* MenuItems.txt in Resources */,
+				718EBBE41D4199F40071740A /* ic-nationwide-one.png in Resources */,
+				718EBBDD1D4190570071740A /* ic-settings@2x.png in Resources */,
+				718EBBE81D419EAC0071740A /* nationwide-one-loading-iPad.png in Resources */,
+				718EBBB81D4171840071740A /* ContactUsIssues.txt in Resources */,
+				718EBBCA1D41793E0071740A /* ic-circle-outline-app-color@2x.png in Resources */,
+				718EBBB21D4171650071740A /* cache.txt in Resources */,
+				718EBBD11D4190210071740A /* ic-close@2x.png in Resources */,
+				718EBBDB1D4190500071740A /* ic-phone-outline-black@2x.png in Resources */,
+				718EBBCF1D4190190071740A /* ic-arrow@2x.png in Resources */,
+				710CAF181D41575F0003EA87 /* LaunchScreen.storyboard in Resources */,
+				718EBBB71D4171840071740A /* ContactUs.txt in Resources */,
+				710CAF551D415F4B0003EA87 /* nationwide-one-loading.png in Resources */,
+				718EBBD51D4190320071740A /* ic-home-black@2x.png in Resources */,
+				718EBBD71D4190430071740A /* ic-logout@2x.png in Resources */,
+				710CAF151D41575F0003EA87 /* Assets.xcassets in Resources */,
+				710CAF131D41575F0003EA87 /* Main.storyboard in Resources */,
+				718EBBD91D4190490071740A /* ic-menu@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		710CAF061D41575F0003EA87 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				718EBBC61D41752F0071740A /* LoadingAlertViewController.swift in Sources */,
+				710CAF0E1D41575F0003EA87 /* AppDelegate.swift in Sources */,
+				710CAF4A1D415AEA0003EA87 /* SWRevealViewController.m in Sources */,
+				718EBBAF1D4170880071740A /* UserProfile.swift in Sources */,
+				718EBBC41D4174DF0071740A /* MenuOption.swift in Sources */,
+				718EBBC01D41744F0071740A /* SideMenuTableViewCell.swift in Sources */,
+				710CAF4C1D415BA40003EA87 /* SignInViewController.swift in Sources */,
+				718EBBBE1D4174160071740A /* SideMenuViewController.swift in Sources */,
+				718EBBC21D4174610071740A /* SideMenuTableViewDataSource.swift in Sources */,
+				710CAF4E1D415DAC0003EA87 /* UniversalResources.swift in Sources */,
+				718EBBBC1D4172750071740A /* HomeViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		710CAF111D41575F0003EA87 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				710CAF121D41575F0003EA87 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		710CAF161D41575F0003EA87 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				710CAF171D41575F0003EA87 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		710CAF1A1D41575F0003EA87 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		710CAF1B1D41575F0003EA87 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		710CAF1D1D41575F0003EA87 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-1";
+				CLANG_ENABLE_MODULES = YES;
+				INFOPLIST_FILE = NationwideOne/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ios.NationwideOne;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "NationwideOne/Bridger Files/NationwideOne-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		710CAF1E1D41575F0003EA87 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-1";
+				CLANG_ENABLE_MODULES = YES;
+				INFOPLIST_FILE = NationwideOne/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ios.NationwideOne;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "NationwideOne/Bridger Files/NationwideOne-Bridging-Header.h";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		710CAF051D41575F0003EA87 /* Build configuration list for PBXProject "NationwideOne" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				710CAF1A1D41575F0003EA87 /* Debug */,
+				710CAF1B1D41575F0003EA87 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		710CAF1C1D41575F0003EA87 /* Build configuration list for PBXNativeTarget "NationwideOne" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				710CAF1D1D41575F0003EA87 /* Debug */,
+				710CAF1E1D41575F0003EA87 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 710CAF021D41575F0003EA87 /* Project object */;
+}

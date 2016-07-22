@@ -1,0 +1,13 @@
+Profile~
+Name|Cameron Hopkins
+Work Phone|614-555-5555
+Mobile Phone|614-555-5555
+Work Email|hopkic5@nationwide.com
+Department|Collarboration IT Resource
+Manager|Don Chen
+About Me|I love to play video games.
+Picture|cameron-profile-pic.jpg
+Expertise|C#;Java;XCode;Swift;Android Development;iOS Development;Unity3D
+Schools|The Ohio State University
+Birthday|May 28
+Interests|Software Development;Game Design;Mobile Application Development
