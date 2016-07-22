@@ -906,7 +906,7 @@ class ProfileViewController: UIViewController, UITextViewDelegate
         // set up the Text View and the attributes
         workPhoneTextView = UITextView (frame: frameSize)
         workPhoneTextView.font = UIFont (name: UniversalResources.FONT_NAME_REGULAR, size: 10)
-        workPhoneTextView.text = "614-555-5555"
+        workPhoneTextView.text = UniversalResources.SIGNED_IN_PROFILE.workPhone
         workPhoneTextView.textColor = UIColor.lightGrayColor()
         workPhoneTextView.tintColor = UIColor.blackColor()
         workPhoneTextView.backgroundColor = UIColor.grayColor()
@@ -925,7 +925,7 @@ class ProfileViewController: UIViewController, UITextViewDelegate
         // set up the Text View and the attributes
         emailTextView = UITextView (frame: frameSize)
         emailTextView.font = UIFont (name: UniversalResources.FONT_NAME_REGULAR, size: 10)
-        emailTextView.text = "hopkic5@nationwide.com"
+        emailTextView.text = UniversalResources.SIGNED_IN_PROFILE.workEmail
         emailTextView.textColor = UIColor.lightGrayColor()
         emailTextView.tintColor = UIColor.blackColor()
         emailTextView.backgroundColor = UIColor.grayColor()
@@ -943,7 +943,7 @@ class ProfileViewController: UIViewController, UITextViewDelegate
         // set up the Text View and the attributes
         managerTextView = UITextView (frame: frameSize)
         managerTextView.font = UIFont (name: UniversalResources.FONT_NAME_REGULAR, size: 10)
-        managerTextView.text = "Chen, Don"
+        managerTextView.text = UniversalResources.SIGNED_IN_PROFILE.manager
         managerTextView.textColor = UIColor.lightGrayColor()
         managerTextView.tintColor = UIColor.blackColor()
         managerTextView.backgroundColor = UIColor.grayColor()
@@ -962,7 +962,7 @@ class ProfileViewController: UIViewController, UITextViewDelegate
         // set up the Text View and the attributes
         titleTextView = UITextView (frame: frameSize)
         titleTextView.font = UIFont (name: UniversalResources.FONT_NAME_REGULAR, size: 10)
-        titleTextView.text = "Software Engineer"
+        titleTextView.text = UniversalResources.SIGNED_IN_PROFILE.title
         titleTextView.textColor = UIColor.lightGrayColor()
         titleTextView.tintColor = UIColor.blackColor()
         titleTextView.backgroundColor = UIColor.grayColor()
@@ -980,7 +980,7 @@ class ProfileViewController: UIViewController, UITextViewDelegate
         // set up the Text View and the attributes
         roleTextView = UITextView (frame: frameSize)
         roleTextView.font = UIFont (name: UniversalResources.FONT_NAME_REGULAR, size: 10)
-        roleTextView.text = "SharePoint Developer"
+        roleTextView.text = UniversalResources.SIGNED_IN_PROFILE.role
         roleTextView.textColor = UIColor.lightGrayColor()
         roleTextView.tintColor = UIColor.blackColor()
         roleTextView.backgroundColor = UIColor.grayColor()
@@ -999,7 +999,7 @@ class ProfileViewController: UIViewController, UITextViewDelegate
         // set up the Text View and the attributes
         locationTextView = UITextView (frame: frameSize)
         locationTextView.font = UIFont (name: UniversalResources.FONT_NAME_REGULAR, size: 10)
-        locationTextView.text = "Columbus, OH"
+        locationTextView.text = UniversalResources.SIGNED_IN_PROFILE.location
         locationTextView.textColor = UIColor.lightGrayColor()
         locationTextView.tintColor = UIColor.blackColor()
         locationTextView.backgroundColor = UIColor.grayColor()
@@ -1040,7 +1040,7 @@ class ProfileViewController: UIViewController, UITextViewDelegate
         // set up the Text View and the attributes
         aboutMeTextView = UITextView (frame: frameSize)
         aboutMeTextView.font = UIFont (name: UniversalResources.FONT_NAME_REGULAR, size: 10)
-        aboutMeTextView.text = "About Me"
+        aboutMeTextView.text = UniversalResources.SIGNED_IN_PROFILE.aboutMe
         aboutMeTextView.textColor = UIColor.lightGrayColor()
         aboutMeTextView.tintColor = UIColor.blackColor()
         aboutMeTextView.backgroundColor = UIColor.whiteColor()
@@ -1059,7 +1059,7 @@ class ProfileViewController: UIViewController, UITextViewDelegate
         // set up the Text View and the attributes
         specialtiesTextView = UITextView (frame: frameSize)
         specialtiesTextView.font = UIFont (name: UniversalResources.FONT_NAME_REGULAR, size: 10)
-        specialtiesTextView.text = "Specialties"
+        specialtiesTextView.text = UniversalResources.SIGNED_IN_PROFILE.specialties
         specialtiesTextView.textColor = UIColor.lightGrayColor()
         specialtiesTextView.tintColor = UIColor.blackColor()
         specialtiesTextView.backgroundColor = UIColor.whiteColor()
@@ -1078,7 +1078,7 @@ class ProfileViewController: UIViewController, UITextViewDelegate
         // set up the Text View and the attributes
         hobbiesTextView = UITextView (frame: frameSize)
         hobbiesTextView.font = UIFont (name: UniversalResources.FONT_NAME_REGULAR, size: 10)
-        hobbiesTextView.text = "Hobbies"
+        hobbiesTextView.text = UniversalResources.SIGNED_IN_PROFILE.hobbies
         hobbiesTextView.textColor = UIColor.lightGrayColor()
         hobbiesTextView.tintColor = UIColor.blackColor()
         hobbiesTextView.backgroundColor = UIColor.whiteColor()

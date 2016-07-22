@@ -226,7 +226,7 @@ class UniversalResources
                 else if typeValue[0] == "Manager"
                 {
                     // set the manager
-                    //newProfile.manager = UserProfile.findUserProfileByName(typeValue[1])
+                    newProfile.manager = typeValue[1]
                 }
                     // if this type is the picture
                 else if typeValue[0] == "Picture"
@@ -235,7 +235,13 @@ class UniversalResources
                     newProfile.picture = typeValue[1]
                 }
                     // if this type is the expertise
-                else if typeValue[0] == "Expertise"
+                else if typeValue[0] == "About Me"
+                {
+                    // set the expertise
+                    newProfile.aboutMe = typeValue[1]
+                }
+                    // if this type is the expertise
+                else if typeValue[0] == "Specialties"
                 {
                     // set the expertise
                     newProfile.specialties = typeValue[1]
@@ -253,7 +259,7 @@ class UniversalResources
                     newProfile.birthday = typeValue[1]
                 }
                     // if this type is the interests
-                else if typeValue[0] == "Interests"
+                else if typeValue[0] == "Hobies"
                 {
                     // set the interests
                     newProfile.hobbies = typeValue[1]

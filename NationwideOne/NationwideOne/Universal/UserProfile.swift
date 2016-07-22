@@ -60,10 +60,10 @@ class UserProfile: Hashable
     }
     
     // the String representing the UserProfile manager
-    var manager: UserProfile
+    var manager: String
         {
         get { return theManager }
-        set (newManager) { self.theManager = UserProfile(userProfileToCopy: newManager) }
+        set (newManager) { self.theManager = newManager }
     }
     
     // the String representing the UserProfile about me
@@ -159,8 +159,8 @@ class UserProfile: Hashable
     // the String representing the UserProfile department
     private var theDepartment: String = ""
     
-    // the UserProfile representing the UserProfile manager
-    private var theManager: UserProfile!
+    // the String representing the UserProfile manager
+    private var theManager: String = ""
     
     // the String representing the UserProfile about me
     private var theAboutMe: String = ""
@@ -246,6 +246,7 @@ class UserProfile: Hashable
         mobilePhone = ""
         workEmail = ""
         department = ""
+        manager = ""
         aboutMe = ""
         picture = ""
         specialties = ""
@@ -273,7 +274,7 @@ class UserProfile: Hashable
     /// <param name="schools">UserProfile schools.</param>
     /// <param name="birthday">UserProfile birthday.</param>
     /// <param name="hobbies">UserProfile hobbies.</param>
-    init (shortName: String, name: String, workPhone: String, mobilePhone: String, workEmail: String, department: String, manager: UserProfile, aboutMe: String, picture: String, specialties: String, schools: String, birthday: String, hobbies: String, title: String, role: String, location: String)
+    init (shortName: String, name: String, workPhone: String, mobilePhone: String, workEmail: String, department: String, manager: String, aboutMe: String, picture: String, specialties: String, schools: String, birthday: String, hobbies: String, title: String, role: String, location: String)
     {
         // set the values
         self.shortName = shortName
@@ -282,7 +283,7 @@ class UserProfile: Hashable
         self.mobilePhone = mobilePhone
         self.workEmail = workEmail
         self.department = department
-        self.manager = UserProfile(userProfileToCopy: manager)
+        self.manager = manager
         self.aboutMe = aboutMe
         self.picture = picture
         self.specialties = specialties
