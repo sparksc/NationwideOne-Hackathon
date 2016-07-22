@@ -42,6 +42,9 @@ class UniversalResources
     // the images used for the app
     static let ARROW_IMAGE = UIImage (named: "ic-arrow@2x.png")!
     static let BUG_IMAGE = UIImage (named: "ic-bug@2x.png")!
+    static let CAFE_IMAGE = UIImage (named: "ic-cafe@2x.png")!
+    static let CHECKED_CHECK_BOX_IMAGE = UIImage (named: "ic-checked-check-box@2x.png")!
+    static let UNCHECKED_CHECK_BOX_IMAGE = UIImage (named: "ic-unchecked-check-box@2x.png")!
     static let CIRCLE_CHECK_APP_COLOR_IMAGE = UIImage (named: "ic-circle-check-app-color@2x.png")!
     static let CIRCLE_CHECK_BLACK_IMAGE = UIImage (named: "ic-circle-check-black@2x.png")!
     static let CIRCLE_FILLED_APP_COLOR_IMAGE = UIImage (named: "ic-circle-filled-app-color@2x.png")!
@@ -49,21 +52,25 @@ class UniversalResources
     static let CIRCLE_OUTLINE_APP_COLOR_IMAGE = UIImage (named: "ic-circle-outline-app-color@2x.png")!
     static let CIRCLE_OUTLINE_BLACK_IMAGE = UIImage (named: "ic-circle-outline-black@2x.png")!
     static let CLOSE_IMAGE = UIImage (named: "ic-close@2x.png")!
+    static let CONTACT_IMAGE = UIImage (named: "ic-contact@2x.png")!
+    static let E_BIZ_IMAGE = UIImage (named: "ic-e-biz@2x.png")!
     static let FEEDBACK_IMAGE = UIImage (named: "ic-feedback@2x.png")!
     static let HEART_EMPTY_BLACK_IMAGE = UIImage (named: "ic-heart-empty-black@2x.png")!
     static let HEART_EMPTY_RED_IMAGE = UIImage (named: "ic-heart-empty-red@2x.png")!
     static let HEART_FILLED_BLACK_IMAGE = UIImage (named: "ic-heart-filled-black@2x.png")!
     static let HEART_FILLED_RED_IMAGE = UIImage (named: "ic-heart-filled-red@2x.png")!
     static let HISTORY_IMAGE = UIImage (named: "ic-history@2x.png")!
+    static let HOME_IMAGE = UIImage (named: "ic-home@2x.png")!
     static let HOME_BLACK_IMAGE = UIImage (named: "ic-home-black@2x.png")!
     static let HOME_WHITE_IMAGE = UIImage (named: "ic-home-white@2x.png")!
-    static let SIGNIN_IMAGE = UIImage (named: "ic-login@2x.png")!
-    static let SIGNOUT_IMAGE = UIImage (named: "ic-logout@2x.png")!
     static let MENU_IMAGE = UIImage (named: "ic-menu@2x.png")!
     static let PHONE_OUTLINE_BLACK_IMAGE = UIImage (named: "ic-phone-outline-black@2x.png")!
     static let PHONE_WHITE_IMAGE = UIImage (named: "ic-phone-white@2x.png")!
     static let REPLAY_IMAGE = UIImage (named: "ic-replay@2x.png")!
+    static let RSS_FEED_IMAGE = UIImage (named: "ic-rss-feed@2x.png")!
     static let SETTINGS_IMAGE = UIImage (named: "ic-settings@2x.png")!
+    static let SIGNIN_IMAGE = UIImage (named: "ic-login@2x.png")!
+    static let SIGNOUT_IMAGE = UIImage (named: "ic-sign-out@2x.png")!
     static let SUGGESTION_IMAGE = UIImage (named: "ic-suggestion@2x.png")!
     static let NATIONWIDE_ONE_RETINA_IMAGE = UIImage (named: "nationwide-one-loading.png")!
     static let NATIONWIDE_ONE_BLUE_BACKGROUND_IMAGE = UIImage (named: "nationwide-one-blue-background.jpg")!
@@ -77,6 +84,7 @@ class UniversalResources
     static let ANYTHING_LOCATOR_IMAGE = UIImage (named: "ic-location@2x.png")!
     static let PROFILE_IMAGE = UIImage (named: "ic-profile-pic@2x.png")!
     static let LOGO_TRANSPARENT_IMAGE = UIImage (named: "ic-logo-transparent@2x.png")!
+    static let LOGO_TOP_BAR_IMAGE = UIImage (named: "ic-logo-topbar.png")
     
     
     
@@ -133,6 +141,8 @@ class UniversalResources
     // the Array of Strings that holds the User Profiles
     static var PROFILES: [UserProfile] = []
     
+    // the user that is currently signed in
+    static var SIGNED_IN_PROFILE: UserProfile!
     
     
     
@@ -176,8 +186,14 @@ class UniversalResources
                 // get the two componenets in the type and value and separate them
                 let typeValue = typeAndValueString.componentsSeparatedByString("|")
                 
+                // if this type is the short name
+                if typeValue[0] == "Short Name"
+                {
+                    // set the short name
+                    newProfile.shortName = typeValue[1]
+                }
                 // if this type is the name
-                if typeValue[0] == "Name"
+                else if typeValue[0] == "Name"
                 {
                     // set the name
                     newProfile.name = typeValue[1]
@@ -222,7 +238,7 @@ class UniversalResources
                 else if typeValue[0] == "Expertise"
                 {
                     // set the expertise
-                    newProfile.expertise = typeValue[1]
+                    newProfile.specialties = typeValue[1]
                 }
                     // if this type is the schools
                 else if typeValue[0] == "Schools"
@@ -240,7 +256,25 @@ class UniversalResources
                 else if typeValue[0] == "Interests"
                 {
                     // set the interests
-                    newProfile.interests = typeValue[1]
+                    newProfile.hobbies = typeValue[1]
+                }
+                    // if this type is the title
+                else if typeValue[0] == "Title"
+                {
+                    // set the title
+                    newProfile.title = typeValue[1]
+                }
+                    // if this type is the role
+                else if typeValue[0] == "Role"
+                {
+                    // set the role
+                    newProfile.role = typeValue[1]
+                }
+                    // if this type is the location
+                else if typeValue[0] == "Location"
+                {
+                    // set the location
+                    newProfile.location = typeValue[1]
                 }
             }
             
@@ -278,40 +312,27 @@ class UniversalResources
         for menuOption in menuOptions
         {
             // split the string up by the menu items in the logged in or logged out list
-            var menuType = menuOption.componentsSeparatedByString("~")
-            let menuItems = menuType [1].componentsSeparatedByString("\n")
+            var menuItems = menuOption.componentsSeparatedByString("|")
             
             // remove any leading white space
-            if menuType [0].hasPrefix ("\n")
+            if menuItems [0].hasPrefix ("\n")
             {
-                let newStartIndex = menuType [0].startIndex.advancedBy(1)
-                menuType [0] = menuType [0].substringFromIndex(newStartIndex)
+                let newStartIndex = menuItems [0].startIndex.advancedBy(1)
+                menuItems [0] = menuItems [0].substringFromIndex(newStartIndex)
             }
             
-            // go through all the menu items
-            for menuItem in menuItems
+            // menuItems[0] is the item, while menuItems[1] is the description
+            
+            // if the word "Sign Out" exists within the string
+            if menuItems [0].containsString("Sign Out")
             {
-                // if there is a menu item present
-                if menuItem.characters.count > 0
-                {
-                    // itemAndDescription[0] is the item, while itemAndDescription[1] is the description
-                    
-                    // seperate the string
-                    var itemAndDescription = menuItem.componentsSeparatedByString(";")
-                    
-                    
-                    // if the word "Sign Out" exists within the string
-                    if itemAndDescription [0].containsString("Sign Out")
-                    {
-                        // add a sad face emoticon
-                        itemAndDescription [1] = itemAndDescription [1] + " 😔"
-                    }
-                    
-                    // add the menu table item and it's description to the table database
-                    SIDE_MENU_ITEMS.insert(itemAndDescription[0], atIndex: SIDE_MENU_ITEMS.count)
-                    SIDE_MENU_DESCRIPTION_ITEMS.updateValue (itemAndDescription [1], forKey: itemAndDescription[0])
-                }
+                // add a sad face emoticon
+                menuItems [1] = menuItems [1] + " 😔"
             }
+            
+            // add the menu table item and it's description to the table database
+            SIDE_MENU_ITEMS.insert(menuItems[0], atIndex: SIDE_MENU_ITEMS.count)
+            SIDE_MENU_DESCRIPTION_ITEMS.updateValue (menuItems [1], forKey: menuItems[0])
         }
     }
     

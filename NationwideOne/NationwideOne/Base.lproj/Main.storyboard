@@ -42,6 +42,24 @@
             </objects>
             <point key="canvasLocation" x="1176" y="1606"/>
         </scene>
+        <!--Profile View Controller-->
+        <scene sceneID="cZj-9g-Q7G">
+            <objects>
+                <viewController storyboardIdentifier="ProfileViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="2Pd-vK-xdp" customClass="ProfileViewController" customModule="NationwideOne" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bhC-Wf-h5S"/>
+                        <viewControllerLayoutGuide type="bottom" id="TYr-Ob-kVm"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Aeo-6m-zVC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GUr-hu-NxA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1879" y="1606"/>
+        </scene>
         <!--Loading Alert View Controller-->
         <scene sceneID="rWv-J8-wze">
             <objects>

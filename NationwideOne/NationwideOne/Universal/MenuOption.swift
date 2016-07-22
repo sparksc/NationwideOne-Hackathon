@@ -18,7 +18,13 @@ class MenuOption
     // the static String that holds the Side Menu Item "Go Back To Home"
     static let MENU_OPTION_HOME = "Go Back To Home"
     
-    // the static String that holds the Side Menu Item "Contact Us"
+    // the static String that holds the Side Menu Item "Profile"
+    static let MENU_OPTION_PROFILE = "Profile"
+    
+    // the static String that holds the Side Menu Item "E-Biz"
+    static let MENU_OPTION_E_BIZ = "E-Biz"
+    
+    // the static String that holds the Side Menu Item "RSS Feed"
     static let MENU_OPTION_RSS_FEED = "RSS Feed"
     
     // the static String that holds the Side Menu Item "Favorite Food's"

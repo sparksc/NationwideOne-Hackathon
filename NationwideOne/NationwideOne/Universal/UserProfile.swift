@@ -17,6 +17,13 @@ class UserProfile: Hashable
     
     // MARK: - all fields that relate public accessing
     
+    // the String representing the UserProfile short name
+    var shortName: String
+        {
+        get { return theShortName}
+        set (newShortName) { self.theShortName = newShortName }
+    }
+    
     // the String representing the UserProfile name
     var name: String
         {
@@ -73,11 +80,11 @@ class UserProfile: Hashable
         set (newPicture) { self.thePicture = newPicture }
     }
     
-    // the String representing the UserProfile expertise
-    var expertise: String
+    // the String representing the UserProfile specialties
+    var specialties: String
         {
-        get { return theExpertise }
-        set (newExpertise) { self.theExpertise = newExpertise }
+        get { return theSpecialties }
+        set (newSpecialties) { self.theSpecialties = newSpecialties }
     }
     
     // the String representing the UserProfile schools
@@ -94,24 +101,48 @@ class UserProfile: Hashable
         set (newBirthday) { self.theBirthday = newBirthday }
     }
     
-    // the String representing the UserProfile interests
-    var interests: String
+    // the String representing the UserProfile hobbies
+    var hobbies: String
         {
-        get { return theInterests }
-        set (newInterests) { self.theInterests = newInterests }
+        get { return theHobbies }
+        set (newHobbies) { self.theHobbies = newHobbies }
+    }
+    
+    // the String representing the UserProfile title
+    var title: String
+        {
+        get { return theTitle }
+        set (newTitle) { self.theTitle = newTitle }
+    }
+    
+    // the String representing the UserProfile role
+    var role: String
+        {
+        get { return theRole }
+        set (newRole) { self.theRole = newRole }
+    }
+    
+    // the String representing the UserProfile location
+    var location: String
+        {
+        get { return theLocation }
+        set (newLocation) { self.theLocation = newLocation }
     }
     
     
     // the Hash Value
     var hashValue: Int
         {
-        get { return (13 * name.characters.count + 27) * Int(arc4random_uniform(100) + 1) + interests.hashValue }
+        get { return (13 * name.characters.count + 27) * Int(arc4random_uniform(100) + 1) + hobbies.hashValue }
     }
     
     
     
     
     // MARK: - all fields that relate to the internal class
+    
+    // the String representing the UserProfile short name
+    private var theShortName: String = ""
     
     // the String representing the UserProfile name
     private var theName: String = ""
@@ -131,14 +162,14 @@ class UserProfile: Hashable
     // the UserProfile representing the UserProfile manager
     private var theManager: UserProfile!
     
-    // the String representing the UserProfile department
+    // the String representing the UserProfile about me
     private var theAboutMe: String = ""
     
-    // the String representing the UserProfile department
+    // the String representing the UserProfile picture
     private var thePicture: String = ""
     
     // the String representing the UserProfile department
-    private var theExpertise: String = ""
+    private var theSpecialties: String = ""
     
     // the String representing the UserProfile department
     private var theSchools: String = ""
@@ -147,8 +178,16 @@ class UserProfile: Hashable
     private var theBirthday: String = ""
     
     // the String representing the UserProfile department
-    private var theInterests: String = ""
+    private var theHobbies: String = ""
     
+    // the String representing the UserProfile department
+    private var theTitle: String = ""
+    
+    // the String representing the UserProfile department
+    private var theRole: String = ""
+    
+    // the String representing the UserProfile department
+    private var theLocation: String = ""
     
     
     
@@ -159,7 +198,34 @@ class UserProfile: Hashable
     /// </summary>
     static func findUserProfileByName(name: String) -> UserProfile
     {
-        //TODO find user by name
+        // loop through all profiles
+        for user in UniversalResources.PROFILES
+        {
+            // if the name matches
+            if user.name == name
+            {
+                return user
+            }
+        }
+        
+        // return an empty UserProfile
+        return UserProfile()
+    }
+    
+    /// <summary>
+    /// Searches for a UserProfile by short name.
+    /// </summary>
+    static func findUserProfileByShortName(shortName: String) -> UserProfile
+    {
+        // loop through all profiles
+        for user in UniversalResources.PROFILES
+        {
+            // if the short name matches
+            if user.shortName == shortName
+            {
+                return user
+            }
+        }
         
         // return an empty UserProfile
         return UserProfile()
@@ -174,6 +240,7 @@ class UserProfile: Hashable
     init()
     {
         // set the default
+        shortName = ""
         name = ""
         workPhone = ""
         mobilePhone = ""
@@ -181,16 +248,20 @@ class UserProfile: Hashable
         department = ""
         aboutMe = ""
         picture = ""
-        expertise = ""
+        specialties = ""
         schools = ""
         birthday = ""
-        interests = ""
+        hobbies = ""
+        title = ""
+        role = ""
+        location = ""
     }
     
     /// <summary>
     /// Initializes a new instance of the UserProfile class.
     /// </summary>
-    /// <param name="name">UserProfile type.</param>
+    /// <param name="name">UserProfile short name.</param>
+    /// <param name="name">UserProfile name.</param>
     /// <param name="workPhone">UserProfile work phone number.</param>
     /// <param name="mobilePhone">UserProfile mobile phone number.</param>
     /// <param name="workEmail">UserProfile work email.</param>
@@ -198,13 +269,14 @@ class UserProfile: Hashable
     /// <param name="manager">UserProfile manager.</param>
     /// <param name="aboutMe">UserProfile about me.</param>
     /// <param name="picture">UserProfile picture.</param>
-    /// <param name="expertise">UserProfile expertise.</param>
+    /// <param name="specialties">UserProfile specialties.</param>
     /// <param name="schools">UserProfile schools.</param>
     /// <param name="birthday">UserProfile birthday.</param>
-    /// <param name="interests">UserProfile interests.</param>
-    init (name: String, workPhone: String, mobilePhone: String, workEmail: String, department: String, manager: UserProfile, aboutMe: String, picture: String, expertise: String, schools: String, birthday: String, interests: String)
+    /// <param name="hobbies">UserProfile hobbies.</param>
+    init (shortName: String, name: String, workPhone: String, mobilePhone: String, workEmail: String, department: String, manager: UserProfile, aboutMe: String, picture: String, specialties: String, schools: String, birthday: String, hobbies: String, title: String, role: String, location: String)
     {
         // set the values
+        self.shortName = shortName
         self.name = name
         self.workPhone = workPhone
         self.mobilePhone = mobilePhone
@@ -213,10 +285,13 @@ class UserProfile: Hashable
         self.manager = UserProfile(userProfileToCopy: manager)
         self.aboutMe = aboutMe
         self.picture = picture
-        self.expertise = expertise
+        self.specialties = specialties
         self.schools = schools
         self.birthday = birthday
-        self.interests = interests
+        self.hobbies = hobbies
+        self.title = title
+        self.role = role
+        self.location = location
     }
     
     /// <summary>
@@ -226,6 +301,7 @@ class UserProfile: Hashable
     init (userProfileToCopy: UserProfile)
     {
         // set the values
+        self.shortName = userProfileToCopy.shortName
         self.name = userProfileToCopy.name
         self.workPhone = userProfileToCopy.workPhone
         self.mobilePhone = userProfileToCopy.mobilePhone
@@ -234,10 +310,13 @@ class UserProfile: Hashable
         self.manager = userProfileToCopy.manager
         self.aboutMe = userProfileToCopy.aboutMe
         self.picture = userProfileToCopy.picture
-        self.expertise = userProfileToCopy.expertise
+        self.specialties = userProfileToCopy.specialties
         self.schools = userProfileToCopy.schools
         self.birthday = userProfileToCopy.birthday
-        self.interests = userProfileToCopy.interests
+        self.hobbies = userProfileToCopy.hobbies
+        self.title = userProfileToCopy.title
+        self.role = userProfileToCopy.role
+        self.location = userProfileToCopy.location
     }
     
     
@@ -250,7 +329,8 @@ class UserProfile: Hashable
     func equals(userProfileToCompare: UserProfile) -> Bool
     {
         // if none of the conditions are met, it's not equal
-        if self.name != userProfileToCompare.name
+        if self.shortName != userProfileToCompare.shortName
+            || self.name != userProfileToCompare.name
             || self.workPhone != userProfileToCompare.workPhone
             || self.mobilePhone != userProfileToCompare.mobilePhone
             || self.workEmail != userProfileToCompare.workEmail
@@ -258,10 +338,13 @@ class UserProfile: Hashable
             || self.manager != userProfileToCompare.manager
             || self.aboutMe != userProfileToCompare.aboutMe
             || self.picture != userProfileToCompare.picture
-            || self.expertise != userProfileToCompare.expertise
+            || self.specialties != userProfileToCompare.specialties
             || self.schools != userProfileToCompare.schools
             || self.birthday != userProfileToCompare.birthday
-            || self.interests != userProfileToCompare.interests
+            || self.hobbies != userProfileToCompare.hobbies
+            || self.title != userProfileToCompare.title
+            || self.role != userProfileToCompare.role
+            || self.location != userProfileToCompare.location
         {
             // conditions are not met, return not equal
             return false
@@ -285,7 +368,8 @@ class UserProfile: Hashable
 func == (lhs: UserProfile, rhs: UserProfile) -> Bool
 {
     // if none of the conditions are met, it's not equal
-    if lhs.name != rhs.name
+    if lhs.shortName != rhs.shortName
+        || lhs.name != rhs.name
         || lhs.workPhone != rhs.workPhone
         || lhs.mobilePhone != rhs.mobilePhone
         || lhs.workEmail != rhs.workEmail
@@ -293,10 +377,13 @@ func == (lhs: UserProfile, rhs: UserProfile) -> Bool
         || lhs.manager != rhs.manager
         || lhs.aboutMe != rhs.aboutMe
         || lhs.picture != rhs.picture
-        || lhs.expertise != rhs.expertise
+        || lhs.specialties != rhs.specialties
         || lhs.schools != rhs.schools
         || lhs.birthday != rhs.birthday
-        || lhs.interests != rhs.interests
+        || lhs.hobbies != rhs.hobbies
+        || lhs.title != rhs.title
+        || lhs.role != rhs.role
+        || lhs.location != rhs.location
     {
         // conditions are not met, return not equal
         return false

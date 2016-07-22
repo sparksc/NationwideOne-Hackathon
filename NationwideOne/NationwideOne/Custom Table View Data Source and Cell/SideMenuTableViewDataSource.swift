@@ -150,7 +150,27 @@ class SideMenuTableViewDataSource: UIViewController, UITableViewDelegate, UITabl
         // if this is the "Home" cell
         if name.lowercaseString.containsString("home")
         {
-            return UniversalResources.HOME_BLACK_IMAGE
+            return UniversalResources.HOME_IMAGE
+        }
+        // if this is the "Profile" cell
+        else if name.lowercaseString.containsString("profile")
+        {
+            return UniversalResources.PROFILE_IMAGE
+        }
+        // if this is the "E-Biz" cell
+        else if name.lowercaseString.containsString("e-biz")
+        {
+            return UniversalResources.E_BIZ_IMAGE
+        }
+        // if this is the "RSS Feed" cell
+        else if name.lowercaseString.containsString("rss")
+        {
+            return UniversalResources.RSS_FEED_IMAGE
+        }
+        // if this is the "Cafe" cell
+        else if name.lowercaseString.containsString("cafe")
+        {
+            return UniversalResources.CAFE_IMAGE
         }
         // if this is the "Settings" cell
         else if name.lowercaseString.containsString("settings")
@@ -160,17 +180,17 @@ class SideMenuTableViewDataSource: UIViewController, UITableViewDelegate, UITabl
         // if this is the "Feedback" cell
         else if name.lowercaseString.containsString("feedback")
         {
-            return UniversalResources.SUGGESTION_IMAGE
+            return UniversalResources.FEEDBACK_IMAGE
         }
         // if this is the "Contact Us" cell
         else if name.lowercaseString.containsString("contact")
         {
-            return UniversalResources.PHONE_OUTLINE_BLACK_IMAGE
+            return UniversalResources.CONTACT_IMAGE
         }
-        // if this is the "Sign In" cell
-        else if name.lowercaseString.containsString("sign in")
+        // if this is the "Sign Out" cell
+        else if name.lowercaseString.containsString("sign out")
         {
-            return UniversalResources.SIGNIN_IMAGE
+            return UniversalResources.SIGNOUT_IMAGE
         }
         
         // return an empty image

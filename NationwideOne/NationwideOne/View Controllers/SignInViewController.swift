@@ -92,6 +92,16 @@ class SignInViewController: UIViewController, UITextViewDelegate
     {
         super.viewDidLoad()
         
+        // set up a notification for when the keyboard is shown
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(SignInViewController.keyboardWillShow(_:)), name: UIKeyboardWillShowNotification, object: nil)
+        
+        // refresh the View when the notification (Moving To Inactive) happens
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(SignInViewController.movingToInactive(_:)), name: "Moving To Inactive", object: nil)
+        
+        // refresh the View when the notification (Did Become Active) happens
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(SignInViewController.didBecomeActive(_:)), name: "Did Become Active", object: nil)
+
+        
         // set the status bar style
         UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.Default
         
@@ -169,10 +179,12 @@ class SignInViewController: UIViewController, UITextViewDelegate
         // if the sign in Button is pressed
         if sender.tag == signInButton.tag
         {
-            /*
+            UniversalResources.SIGNED_IN_PROFILE = UserProfile.findUserProfileByShortName(usernameTextView.text)
+            
             // set up Side Menu database
             UniversalResources.setUpSideMenuDatabase ()
             
+            /*
             // set up Contact Us issue database
             UniversalResources.setUpContactUsDatabase ()
             
@@ -413,16 +425,16 @@ class SignInViewController: UIViewController, UITextViewDelegate
     /// <param name="sender"> The object that called this funcion.</param>
     func buttonStateChanged(sender: UIButton)
     {
-        // if the user turned the Switch on
-        if sender.currentImage == UniversalResources.CIRCLE_OUTLINE_APP_COLOR_IMAGE
+        // if the didn't check the box
+        if sender.currentImage == UniversalResources.UNCHECKED_CHECK_BOX_IMAGE
         {
             // set the image to selected
-            rememberMeButton.setImage(UniversalResources.CIRCLE_CHECK_APP_COLOR_IMAGE, forState: UIControlState.Normal)
+            rememberMeButton.setImage(UniversalResources.CHECKED_CHECK_BOX_IMAGE, forState: UIControlState.Normal)
         }
         else
         {
             // set the image to selected
-            rememberMeButton.setImage(UniversalResources.CIRCLE_OUTLINE_APP_COLOR_IMAGE, forState: UIControlState.Normal)
+            rememberMeButton.setImage(UniversalResources.UNCHECKED_CHECK_BOX_IMAGE, forState: UIControlState.Normal)
         }
     }
     
@@ -942,7 +954,7 @@ class SignInViewController: UIViewController, UITextViewDelegate
         
         // set up the remember me Button
         rememberMeButton = UIButton ()
-        rememberMeButton.setImage(UniversalResources.CIRCLE_OUTLINE_APP_COLOR_IMAGE, forState: UIControlState.Normal)
+        rememberMeButton.setImage(UniversalResources.UNCHECKED_CHECK_BOX_IMAGE, forState: UIControlState.Normal)
         rememberMeButton.backgroundColor = UIColor.clearColor()
         yPos = passwordTextView.frame.origin.y + passwordTextView.frame.height + 5
         let xPos = rememberMeLabel.frame.origin.x + rememberMeLabel.frame.width + 2

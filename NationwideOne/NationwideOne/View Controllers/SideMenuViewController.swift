@@ -79,6 +79,9 @@ class SideMenuViewController: UIViewController
         // if this View Controller was revealed by the HomeViewController
         if currentCaller == "HomeViewController"
         {
+            // set the current caller for the View Controller
+            hvc.currentCaller = "SideMenuViewController"
+            
             // add the blur effect to the HomeViewController
             hvc.addBlurEffect()
             
@@ -145,7 +148,6 @@ class SideMenuViewController: UIViewController
     /// <param name="menuOption">Menu option.</param>
     func goToMenuOption(menuOption: String)
     {
-        
         // check which selection was made from the menu options and take the user to that option
         if menuOption == MenuOption.MENU_OPTION_HOME
         {
@@ -155,16 +157,33 @@ class SideMenuViewController: UIViewController
                 // toggle the Side Menu
                 // remove the blur effect from the HomeViewController
                 hvc.removeBlurEffectNoAnimation()
-                hvc.navigationController?.popToRootViewControllerAnimated(true)
-                hvc = nil
             }
+        }
+        else if menuOption == MenuOption.MENU_OPTION_PROFILE
+        {
+            // for presenting instatiate the View Controller
+            let profileViewController = UniversalResources.STORYBOARD.instantiateViewControllerWithIdentifier("ProfileViewController") as! ProfileViewController
+            
+            // set up a Navigation Controller for the View being instantiated
+            let navigationController = UINavigationController(rootViewController: profileViewController)
+            navigationController.navigationBar.barTintColor = UniversalResources.UI_APP_COLOR_TINT
+            navigationController.navigationBar.tintColor = UIColor.whiteColor()
+            navigationController.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
+            navigationController.navigationBar.barStyle = UIBarStyle.Black
+            
+            // set up the view
+            profileViewController.setUpView()
+            
+            // present View Controller
+            hvc.presentViewController (navigationController, animated: true, completion: nil)
+        }
+        else if menuOption == MenuOption.MENU_OPTION_E_BIZ
+        {
+            
         }
         else if menuOption == MenuOption.MENU_OPTION_RSS_FEED
         {
-            /*
-             // for presenting instatiate the View Controller
-             let orderHistoryViewController = UniversalResources.STORYBOARD.instantiateViewControllerWithIdentifier("OrderHistoryViewController") as! OrderHistoryViewController
-             */
+           
         }
         else if menuOption == MenuOption.MENU_OPTION_TODAYS_CAFE
         {
@@ -185,7 +204,7 @@ class SideMenuViewController: UIViewController
         else if menuOption == MenuOption.MENU_OPTION_SIGN_OUT
         {
             // create the AlertController
-            let alertController: UIAlertController = UIAlertController(title: "", message: "Are you sure you want to log out?", preferredStyle: .Alert)
+            let alertController: UIAlertController = UIAlertController(title: "", message: "Are you sure you want to sign out?", preferredStyle: .Alert)
             
             // create and add the "Cancel" action
             let cancelAction: UIAlertAction = UIAlertAction(title: "Cancel", style: .Cancel) { action -> Void in
@@ -221,8 +240,8 @@ class SideMenuViewController: UIViewController
                     // close the View
                     loadingAlertViewController.closeView()
                     
-                    // show the user is now logged out, and set up the menu
-                    self.setUpMenu ()
+                    // go back to Sign In menu
+                    self.hvc.navigationController?.popToRootViewControllerAnimated(true)
                 }
             }
             
@@ -275,7 +294,7 @@ class SideMenuViewController: UIViewController
         nationwideOneTitleBarButton.frame = CGRect(x: 0, y: 0, width: revealViewController().rearViewRevealWidth, height: height)
         nationwideOneTitleBarButton.setTitleColor(UIColor.whiteColor(), forState: UIControlState())
         nationwideOneTitleBarButton.backgroundColor = UniversalResources.UI_APP_COLOR_TINT
-        nationwideOneTitleBarButton.setTitle("Xperience", forState: UIControlState())
+        nationwideOneTitleBarButton.setImage(UniversalResources.LOGO_TOP_BAR_IMAGE, forState: UIControlState.Normal)
         nationwideOneTitleBarButton.contentVerticalAlignment = UIControlContentVerticalAlignment.Bottom
         nationwideOneTitleBarButton.enabled = false
         

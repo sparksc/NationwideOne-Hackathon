@@ -38,16 +38,23 @@
 		718EBBCA1D41793E0071740A /* ic-circle-outline-app-color@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 718EBBC81D41793E0071740A /* ic-circle-outline-app-color@2x.png */; };
 		718EBBCF1D4190190071740A /* ic-arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 718EBBCE1D4190190071740A /* ic-arrow@2x.png */; };
 		718EBBD11D4190210071740A /* ic-close@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 718EBBD01D4190210071740A /* ic-close@2x.png */; };
-		718EBBD31D4190280071740A /* ic-feedback@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 718EBBD21D4190280071740A /* ic-feedback@2x.png */; };
-		718EBBD51D4190320071740A /* ic-home-black@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 718EBBD41D4190320071740A /* ic-home-black@2x.png */; };
-		718EBBD71D4190430071740A /* ic-logout@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 718EBBD61D4190430071740A /* ic-logout@2x.png */; };
 		718EBBD91D4190490071740A /* ic-menu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 718EBBD81D4190490071740A /* ic-menu@2x.png */; };
 		718EBBDB1D4190500071740A /* ic-phone-outline-black@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 718EBBDA1D4190500071740A /* ic-phone-outline-black@2x.png */; };
-		718EBBDD1D4190570071740A /* ic-settings@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 718EBBDC1D4190570071740A /* ic-settings@2x.png */; };
-		718EBBDF1D41905E0071740A /* ic-suggestion@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 718EBBDE1D41905E0071740A /* ic-suggestion@2x.png */; };
 		718EBBE41D4199F40071740A /* ic-nationwide-one.png in Resources */ = {isa = PBXBuildFile; fileRef = 718EBBE31D4199F40071740A /* ic-nationwide-one.png */; };
 		718EBBE61D419B300071740A /* nationwide-one-loading-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 718EBBE51D419B300071740A /* nationwide-one-loading-2.png */; };
 		718EBBE81D419EAC0071740A /* nationwide-one-loading-iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = 718EBBE71D419EAC0071740A /* nationwide-one-loading-iPad.png */; };
+		71FBB5201D41C7DE00A9F947 /* ic-logo-topbar.png in Resources */ = {isa = PBXBuildFile; fileRef = 71FBB51F1D41C7DE00A9F947 /* ic-logo-topbar.png */; };
+		71FBB5221D41C93000A9F947 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71FBB5211D41C93000A9F947 /* ProfileViewController.swift */; };
+		71FBB5241D41CCF000A9F947 /* ic-cafe@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 71FBB5231D41CCF000A9F947 /* ic-cafe@2x.png */; };
+		71FBB5261D41CCF600A9F947 /* ic-contact@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 71FBB5251D41CCF600A9F947 /* ic-contact@2x.png */; };
+		71FBB5281D41CCFB00A9F947 /* ic-e-biz@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 71FBB5271D41CCFB00A9F947 /* ic-e-biz@2x.png */; };
+		71FBB52A1D41CD0100A9F947 /* ic-feedback@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 71FBB5291D41CD0100A9F947 /* ic-feedback@2x.png */; };
+		71FBB52C1D41CD0500A9F947 /* ic-home@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 71FBB52B1D41CD0500A9F947 /* ic-home@2x.png */; };
+		71FBB52E1D41CD0B00A9F947 /* ic-settings@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 71FBB52D1D41CD0B00A9F947 /* ic-settings@2x.png */; };
+		71FBB5301D41CD1100A9F947 /* ic-sign-out@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 71FBB52F1D41CD1100A9F947 /* ic-sign-out@2x.png */; };
+		71FBB5321D41DE5400A9F947 /* ic-rss-feed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 71FBB5311D41DE5400A9F947 /* ic-rss-feed@2x.png */; };
+		71FBB5341D41E6AD00A9F947 /* ic-checked-check-box@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 71FBB5331D41E6AD00A9F947 /* ic-checked-check-box@2x.png */; };
+		71FBB5361D41E7A200A9F947 /* ic-unchecked-check-box@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 71FBB5351D41E7A200A9F947 /* ic-unchecked-check-box@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -86,16 +93,23 @@
 		718EBBCD1D417DCB0071740A /* NationwideOne-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "NationwideOne-Bridging-Header.h"; path = "NationwideOne/Bridger Files/NationwideOne-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
 		718EBBCE1D4190190071740A /* ic-arrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ic-arrow@2x.png"; path = "NationwideOne/Images/Icons/ic-arrow@2x.png"; sourceTree = SOURCE_ROOT; };
 		718EBBD01D4190210071740A /* ic-close@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ic-close@2x.png"; path = "NationwideOne/Images/Icons/ic-close@2x.png"; sourceTree = SOURCE_ROOT; };
-		718EBBD21D4190280071740A /* ic-feedback@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ic-feedback@2x.png"; path = "NationwideOne/Images/Icons/ic-feedback@2x.png"; sourceTree = SOURCE_ROOT; };
-		718EBBD41D4190320071740A /* ic-home-black@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ic-home-black@2x.png"; path = "NationwideOne/Images/Icons/ic-home-black@2x.png"; sourceTree = SOURCE_ROOT; };
-		718EBBD61D4190430071740A /* ic-logout@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ic-logout@2x.png"; path = "NationwideOne/Images/Icons/ic-logout@2x.png"; sourceTree = SOURCE_ROOT; };
 		718EBBD81D4190490071740A /* ic-menu@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ic-menu@2x.png"; path = "NationwideOne/Images/Icons/ic-menu@2x.png"; sourceTree = SOURCE_ROOT; };
 		718EBBDA1D4190500071740A /* ic-phone-outline-black@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ic-phone-outline-black@2x.png"; path = "NationwideOne/Images/Icons/ic-phone-outline-black@2x.png"; sourceTree = SOURCE_ROOT; };
-		718EBBDC1D4190570071740A /* ic-settings@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ic-settings@2x.png"; path = "NationwideOne/Images/Icons/ic-settings@2x.png"; sourceTree = SOURCE_ROOT; };
-		718EBBDE1D41905E0071740A /* ic-suggestion@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ic-suggestion@2x.png"; path = "NationwideOne/Images/Icons/ic-suggestion@2x.png"; sourceTree = SOURCE_ROOT; };
 		718EBBE31D4199F40071740A /* ic-nationwide-one.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic-nationwide-one.png"; sourceTree = "<group>"; };
 		718EBBE51D419B300071740A /* nationwide-one-loading-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "nationwide-one-loading-2.png"; path = "NationwideOne/Images/iPhone Icons/nationwide-one-loading-2.png"; sourceTree = SOURCE_ROOT; };
 		718EBBE71D419EAC0071740A /* nationwide-one-loading-iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "nationwide-one-loading-iPad.png"; path = "NationwideOne/Images/iPhone Icons/nationwide-one-loading-iPad.png"; sourceTree = SOURCE_ROOT; };
+		71FBB51F1D41C7DE00A9F947 /* ic-logo-topbar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic-logo-topbar.png"; sourceTree = "<group>"; };
+		71FBB5211D41C93000A9F947 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		71FBB5231D41CCF000A9F947 /* ic-cafe@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic-cafe@2x.png"; sourceTree = "<group>"; };
+		71FBB5251D41CCF600A9F947 /* ic-contact@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic-contact@2x.png"; sourceTree = "<group>"; };
+		71FBB5271D41CCFB00A9F947 /* ic-e-biz@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic-e-biz@2x.png"; sourceTree = "<group>"; };
+		71FBB5291D41CD0100A9F947 /* ic-feedback@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic-feedback@2x.png"; sourceTree = "<group>"; };
+		71FBB52B1D41CD0500A9F947 /* ic-home@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic-home@2x.png"; sourceTree = "<group>"; };
+		71FBB52D1D41CD0B00A9F947 /* ic-settings@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic-settings@2x.png"; sourceTree = "<group>"; };
+		71FBB52F1D41CD1100A9F947 /* ic-sign-out@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic-sign-out@2x.png"; sourceTree = "<group>"; };
+		71FBB5311D41DE5400A9F947 /* ic-rss-feed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic-rss-feed@2x.png"; sourceTree = "<group>"; };
+		71FBB5331D41E6AD00A9F947 /* ic-checked-check-box@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic-checked-check-box@2x.png"; sourceTree = "<group>"; };
+		71FBB5351D41E7A200A9F947 /* ic-unchecked-check-box@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic-unchecked-check-box@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -214,6 +228,7 @@
 				710CAF4B1D415BA40003EA87 /* SignInViewController.swift */,
 				718EBBBB1D4172750071740A /* HomeViewController.swift */,
 				718EBBBD1D4174160071740A /* SideMenuViewController.swift */,
+				71FBB5211D41C93000A9F947 /* ProfileViewController.swift */,
 			);
 			name = "View Controllers";
 			path = "NationwideOne/View Controllers";
@@ -222,19 +237,25 @@
 		710CAF511D415EA50003EA87 /* Icons */ = {
 			isa = PBXGroup;
 			children = (
+				71FBB5351D41E7A200A9F947 /* ic-unchecked-check-box@2x.png */,
+				71FBB5331D41E6AD00A9F947 /* ic-checked-check-box@2x.png */,
+				71FBB5311D41DE5400A9F947 /* ic-rss-feed@2x.png */,
+				71FBB52F1D41CD1100A9F947 /* ic-sign-out@2x.png */,
+				71FBB52D1D41CD0B00A9F947 /* ic-settings@2x.png */,
+				71FBB52B1D41CD0500A9F947 /* ic-home@2x.png */,
+				71FBB5291D41CD0100A9F947 /* ic-feedback@2x.png */,
+				71FBB5271D41CCFB00A9F947 /* ic-e-biz@2x.png */,
+				71FBB5251D41CCF600A9F947 /* ic-contact@2x.png */,
+				71FBB5231D41CCF000A9F947 /* ic-cafe@2x.png */,
+				71FBB51F1D41C7DE00A9F947 /* ic-logo-topbar.png */,
 				71361C561D41B20A000DC6DA /* ic-spot-note@2x.png */,
 				71361C541D41B205000DC6DA /* ic-profile-pic@2x.png */,
 				71361C521D41B1FF000DC6DA /* ic-message@2x.png */,
 				71361C501D41B1FA000DC6DA /* ic-logo-transparent@2x.png */,
 				71361C4E1D41B1F4000DC6DA /* ic-location@2x.png */,
 				71361C4C1D41B1EE000DC6DA /* ic-calendar@2x.png */,
-				718EBBDE1D41905E0071740A /* ic-suggestion@2x.png */,
-				718EBBDC1D4190570071740A /* ic-settings@2x.png */,
 				718EBBDA1D4190500071740A /* ic-phone-outline-black@2x.png */,
 				718EBBD81D4190490071740A /* ic-menu@2x.png */,
-				718EBBD61D4190430071740A /* ic-logout@2x.png */,
-				718EBBD41D4190320071740A /* ic-home-black@2x.png */,
-				718EBBD21D4190280071740A /* ic-feedback@2x.png */,
 				718EBBD01D4190210071740A /* ic-close@2x.png */,
 				718EBBCE1D4190190071740A /* ic-arrow@2x.png */,
 				718EBBC71D41793E0071740A /* ic-circle-check-app-color@2x.png */,
@@ -334,21 +355,27 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				71FBB5241D41CCF000A9F947 /* ic-cafe@2x.png in Resources */,
 				718EBBC91D41793E0071740A /* ic-circle-check-app-color@2x.png in Resources */,
+				71FBB5201D41C7DE00A9F947 /* ic-logo-topbar.png in Resources */,
 				718EBBBA1D4171840071740A /* Profiles.txt in Resources */,
 				718EBBE61D419B300071740A /* nationwide-one-loading-2.png in Resources */,
+				71FBB5301D41CD1100A9F947 /* ic-sign-out@2x.png in Resources */,
 				710CAF541D415F4B0003EA87 /* nationwide-one-blue-background.jpg in Resources */,
-				718EBBD31D4190280071740A /* ic-feedback@2x.png in Resources */,
-				718EBBDF1D41905E0071740A /* ic-suggestion@2x.png in Resources */,
+				71FBB5361D41E7A200A9F947 /* ic-unchecked-check-box@2x.png in Resources */,
 				718EBBB91D4171840071740A /* MenuItems.txt in Resources */,
 				718EBBE41D4199F40071740A /* ic-nationwide-one.png in Resources */,
+				71FBB5261D41CCF600A9F947 /* ic-contact@2x.png in Resources */,
 				71361C531D41B1FF000DC6DA /* ic-message@2x.png in Resources */,
 				71361C4D1D41B1EE000DC6DA /* ic-calendar@2x.png in Resources */,
-				718EBBDD1D4190570071740A /* ic-settings@2x.png in Resources */,
+				71FBB5321D41DE5400A9F947 /* ic-rss-feed@2x.png in Resources */,
 				718EBBE81D419EAC0071740A /* nationwide-one-loading-iPad.png in Resources */,
+				71FBB5281D41CCFB00A9F947 /* ic-e-biz@2x.png in Resources */,
 				718EBBB81D4171840071740A /* ContactUsIssues.txt in Resources */,
 				71361C551D41B205000DC6DA /* ic-profile-pic@2x.png in Resources */,
+				71FBB5341D41E6AD00A9F947 /* ic-checked-check-box@2x.png in Resources */,
 				718EBBCA1D41793E0071740A /* ic-circle-outline-app-color@2x.png in Resources */,
+				71FBB52E1D41CD0B00A9F947 /* ic-settings@2x.png in Resources */,
 				718EBBB21D4171650071740A /* cache.txt in Resources */,
 				718EBBD11D4190210071740A /* ic-close@2x.png in Resources */,
 				718EBBDB1D4190500071740A /* ic-phone-outline-black@2x.png in Resources */,
@@ -358,11 +385,11 @@
 				710CAF181D41575F0003EA87 /* LaunchScreen.storyboard in Resources */,
 				718EBBB71D4171840071740A /* ContactUs.txt in Resources */,
 				710CAF551D415F4B0003EA87 /* nationwide-one-loading.png in Resources */,
-				718EBBD51D4190320071740A /* ic-home-black@2x.png in Resources */,
-				718EBBD71D4190430071740A /* ic-logout@2x.png in Resources */,
+				71FBB52C1D41CD0500A9F947 /* ic-home@2x.png in Resources */,
 				710CAF151D41575F0003EA87 /* Assets.xcassets in Resources */,
 				71361C4F1D41B1F4000DC6DA /* ic-location@2x.png in Resources */,
 				710CAF131D41575F0003EA87 /* Main.storyboard in Resources */,
+				71FBB52A1D41CD0100A9F947 /* ic-feedback@2x.png in Resources */,
 				718EBBD91D4190490071740A /* ic-menu@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -380,6 +407,7 @@
 				718EBBAF1D4170880071740A /* UserProfile.swift in Sources */,
 				718EBBC41D4174DF0071740A /* MenuOption.swift in Sources */,
 				718EBBC01D41744F0071740A /* SideMenuTableViewCell.swift in Sources */,
+				71FBB5221D41C93000A9F947 /* ProfileViewController.swift in Sources */,
 				710CAF4C1D415BA40003EA87 /* SignInViewController.swift in Sources */,
 				718EBBBE1D4174160071740A /* SideMenuViewController.swift in Sources */,
 				718EBBC21D4174610071740A /* SideMenuTableViewDataSource.swift in Sources */,
