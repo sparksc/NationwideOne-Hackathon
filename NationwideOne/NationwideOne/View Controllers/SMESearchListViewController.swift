@@ -9,8 +9,15 @@
 import Foundation
 import UIKit
 
-class SMESearchListViewController: UIViewController
+class SMESearchListViewController: UIViewController, UISearchBarDelegate
 {
+    // MARK: - all fields that relate public accessing
+    
+    // the String that holds the current text
+    var currentText = ""
+    
+    
+    
     // MARK: - all fields that relate to the UI View
     
     // this represent the Navigation Bar Button Item that will take user back to homepage
@@ -28,11 +35,28 @@ class SMESearchListViewController: UIViewController
     // the CGFloat that will contain the total height of the navigation bar and status bar
     private var navigationAndStatusBarHeight: CGFloat = 64
     
-    // the Search Bar that will allow users to search
-    private let SMESearchBar: UISearchBar = UISearchBar()
+    // the Search Controller that will allow users to search
+    private let searchController = UISearchController(searchResultsController: nil)
 
     // the Boolean that determines whether the keyboard was show when leaving the View Controller
     private var keyboardWasShown: Bool = false
+    
+    // the Array of UserProfile from the searc
+    private var filteredUserProfile = [UserProfile]()
+    
+    
+    
+    
+    
+    // MARK: - all fields that relate to the Table View
+    
+    // the Table View of the search list items
+    private var smeSearchListTableView: UITableView!
+    
+    // the Table View Data Source
+    private var smeSearchListTableViewDataSource: SMESearchTableViewDataSource!
+    
+    
     
     
     
@@ -114,6 +138,88 @@ class SMESearchListViewController: UIViewController
 
     
     
+    
+    // MARK: - all functions that relate to the internal class for the Text View Delegate
+    
+    func filterContentForSearchText(searchText: String, scope: String = "All")
+    {
+        if searchText != "I need help with..."
+        {
+            filteredUserProfile = UniversalResources.PROFILES.filter
+            {
+                profile in
+                return profile.specialties.lowercaseString.containsString(searchText.lowercaseString) || profile.hobbies.lowercaseString.containsString(searchText.lowercaseString)
+                    || profile.aboutMe.lowercaseString.containsString(searchText.lowercaseString)
+                    || profile.title.lowercaseString.containsString(searchText.lowercaseString)
+                    || profile.department.lowercaseString.containsString(searchText.lowercaseString)
+            }
+            
+            // set up the frame
+            let frame = CGRect(x: 0, y: 0, width: view.frame.width, height: CGFloat((filteredUserProfile.count + 1) * 44))
+            smeSearchListTableView.frame = frame
+            smeSearchListTableViewDataSource.tableKeys = filteredUserProfile
+            smeSearchListTableView.reloadData()
+        }
+    }
+    
+    
+    // MARK: - all functions that relate to the search bar delegate
+    
+    /// <summary>
+    /// Determines if the search bar should begin editing
+    /// </summary>
+    func searchBarShouldBeginEditing(searchBar: UISearchBar) -> Bool {
+        
+        // if this is the start of a search
+        if searchBar.text == "I need help with..."
+        {
+            // clear the text
+            searchBar.text = ""
+        }
+        
+        return true
+    }
+    
+    /// <summary>
+    /// Determines if the search bar should end editing
+    /// </summary>
+    func searchBarShouldEndEditing(searchBar: UISearchBar) -> Bool {
+        
+        // if the user didn't enter text
+        if searchBar.text == ""
+        {
+            // set the text
+            searchBar.text = "I need help with..."
+        }
+        
+        return true
+    }
+    
+    /// <summary>
+    /// When the search Button is clicked.
+    /// </summary>
+    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
+        currentText = searchBar.text!
+    }
+
+    /// <summary>
+    /// When the cancel Button is clicked.
+    /// </summary>
+    func searchBarCancelButtonClicked(searchBar: UISearchBar) {
+        searchBar.text = currentText
+        filteredUserProfile = []
+        
+        // set up the frame
+        let frame = CGRect(x: 0, y: 0, width: view.frame.width, height: CGFloat(44))
+        smeSearchListTableView.frame = frame
+        smeSearchListTableViewDataSource.tableKeys = filteredUserProfile
+        smeSearchListTableView.reloadData()
+    }
+    
+    
+    
+    // MARK: - all functions that relate to the objects that calls these functions through an action
+    
     /// <summary>
     /// Called when the keyboard is about to show
     /// </summary>
@@ -164,7 +270,7 @@ class SMESearchListViewController: UIViewController
             if keyboardWasShown
             {
                 // make the Text View the current responder
-                SMESearchBar.becomeFirstResponder()
+                searchController.searchBar.becomeFirstResponder()
             }
         }
     }
@@ -189,7 +295,7 @@ class SMESearchListViewController: UIViewController
             let keyboardWasUp = keyboardWasShown
             
             // release the responder
-            SMESearchBar.resignFirstResponder()
+            searchController.searchBar.resignFirstResponder()
             
             // set the state before force closing
             keyboardWasShown = keyboardWasUp
@@ -216,6 +322,61 @@ class SMESearchListViewController: UIViewController
         closeKeyboardIfNecessary()
     }
 
+    /// <summary>
+    /// Returns the user back to the Food Menu
+    /// </summary>
+    /// <param name="sender"> The object that called this funcion.</param>
+    func closeView(sender: UIBarButtonItem)
+    {
+        // go back to previous View Controller
+        navigationController?.popViewControllerAnimated(true)
+    }
+    
+    /// <summary>
+    /// Called when a cell for the Food Menu Item is long pressed.
+    /// </summary>
+    /// <param name="longPressGestureRecognizer">UILongPressGestureRecognizer that called this function.</param>
+    func cellPress(tapGestureRecognizer: UITapGestureRecognizer)
+    {
+        // get the current state, if it began
+        if tapGestureRecognizer.state == UIGestureRecognizerState.Began
+        {
+            
+        }
+        // get the current state, if it has ended
+        else if tapGestureRecognizer.state == UIGestureRecognizerState.Ended
+        {
+            // get the touch point in the Table View
+            let touchPoint = tapGestureRecognizer.locationInView(smeSearchListTableView)
+            
+            // get the index path of that cell
+            let indexPath = smeSearchListTableView.indexPathForRowAtPoint(touchPoint)
+            
+            // if an index path exists
+            if indexPath != nil
+            {
+                // for presenting instatiate the View Controller
+                let profileViewController = UniversalResources.STORYBOARD.instantiateViewControllerWithIdentifier("ProfileViewController") as! ProfileViewController
+                
+                // set up a Navigation Controller for the View being instantiated
+                let navigationController = UINavigationController(rootViewController: profileViewController)
+                navigationController.navigationBar.barTintColor = UniversalResources.UI_APP_COLOR_TINT
+                navigationController.navigationBar.tintColor = UIColor.whiteColor()
+                navigationController.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
+                navigationController.navigationBar.barStyle = UIBarStyle.Black
+                
+                // set the item was selected
+                profileViewController.currentProfile = filteredUserProfile[indexPath!.row]
+                
+                // set up the view
+                profileViewController.setUpView()
+                
+                // present View Controller
+                presentViewController (navigationController, animated: true, completion: nil)
+            }
+        }
+    }
+    
     
     // MARK: - all functions that relate to the internal class for public accessing
     
@@ -259,7 +420,7 @@ class SMESearchListViewController: UIViewController
     {
         // set up a tmp view
         let tmpImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 10, height: 44))
-        tmpImageView.image = UniversalResources.LOGO_TOP_BAR_IMAGE
+        tmpImageView.image = UniversalResources.LOGO_WHITE_IMAGE
         
         // set up the attributes of the navigation controller
         navigationController?.navigationBar.barTintColor = UniversalResources.UI_APP_COLOR_TINT
@@ -270,7 +431,7 @@ class SMESearchListViewController: UIViewController
         navigationItem.titleView = tmpImageView
         
         // set up the back Bar Button Item
-        backBarButtonItem = UIBarButtonItem (title: "Back", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(ProfileViewController.closeView(_:)))
+        backBarButtonItem = UIBarButtonItem (title: "Back", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(SMESearchListViewController.closeView(_:)))
         
         // set the left and right Bar Button Items
         navigationItem.setLeftBarButtonItem(backBarButtonItem, animated: true)
@@ -282,13 +443,12 @@ class SMESearchListViewController: UIViewController
     /// </summary>
     private func setUpSMESearchBar()
     {
-        // set up the frame
-        let width = 3*view.frame.width/4
-        SMESearchBar.frame = CGRect(x: view.center.x - width/2, y: 20, width: width, height: 30)
-        SMESearchBar.text = "I need help with..."
-        
-        // add the Views
-        view.addSubview(SMESearchBar)
+        // set up the search controller
+        searchController.searchBar.delegate = self
+        searchController.searchBar.text = currentText
+        searchController.searchResultsUpdater = self
+        searchController.dimsBackgroundDuringPresentation = false
+        definesPresentationContext = true
     }
     
     /// <summary>
@@ -296,7 +456,41 @@ class SMESearchListViewController: UIViewController
     /// </summary>
     private func setUpTableView()
     {
+        filteredUserProfile = UniversalResources.PROFILES.filter
+        {
+            profile in
+            return profile.specialties.lowercaseString.containsString(currentText.lowercaseString) || profile.hobbies.lowercaseString.containsString(currentText.lowercaseString)
+                || profile.aboutMe.lowercaseString.containsString(currentText.lowercaseString)
+                || profile.title.lowercaseString.containsString(currentText.lowercaseString)
+                || profile.department.lowercaseString.containsString(currentText.lowercaseString)
+        }
 
+        // set up the frame
+        let frame = CGRect(x: 0, y: 0, width: view.frame.width, height: CGFloat((filteredUserProfile.count + 1) * 44))
+        
+        // set up the Table View
+        smeSearchListTableView = UITableView (frame: frame, style: UITableViewStyle.Plain)
+        smeSearchListTableViewDataSource = SMESearchTableViewDataSource()
+        smeSearchListTableViewDataSource.tableKeys = filteredUserProfile
+        smeSearchListTableViewDataSource.sslvc = self
+        smeSearchListTableViewDataSource.searchController = searchController
+        smeSearchListTableView.separatorColor = UniversalResources.UI_APP_COLOR_TINT
+        smeSearchListTableView.separatorStyle = UITableViewCellSeparatorStyle.SingleLine
+        smeSearchListTableView.backgroundColor = view.backgroundColor
+        smeSearchListTableView.delegate = smeSearchListTableViewDataSource
+        smeSearchListTableView.dataSource = smeSearchListTableViewDataSource
+        smeSearchListTableView.registerClass(SMESearchTableViewCell.self, forCellReuseIdentifier: "SMESearchListTableViewCell")
+        
+        
+        // set up the Long Press Gesture Recognizer for the Table View
+        let tap = UITapGestureRecognizer(target: self, action: #selector(SMESearchListViewController.cellPress(_:)))
+        smeSearchListTableView.addGestureRecognizer(tap)
+        
+        
+        // add the subViews
+        view.addSubview(smeSearchListTableView)
+        
+        smeSearchListTableView.tableHeaderView = searchController.searchBar
     }
     
     /// <summary>
@@ -308,7 +502,13 @@ class SMESearchListViewController: UIViewController
         if keyboardWasShown
         {
             // release the focus
-            SMESearchBar.resignFirstResponder()
+            searchController.searchBar.resignFirstResponder()
         }
+    }
+}
+
+extension SMESearchListViewController: UISearchResultsUpdating {
+    func updateSearchResultsForSearchController(searchController: UISearchController) {
+        filterContentForSearchText(searchController.searchBar.text!)
     }
 }

@@ -84,6 +84,8 @@ class UniversalResources
     static let ANYTHING_LOCATOR_IMAGE = UIImage (named: "ic-location@2x.png")!
     static let PROFILE_IMAGE = UIImage (named: "ic-profile-pic@2x.png")!
     static let LOGO_TRANSPARENT_IMAGE = UIImage (named: "ic-logo-transparent@2x.png")!
+    static let LOGO_BLUE_IMAGE = UIImage (named: "ic-logo-blue.jpg")
+    static let LOGO_WHITE_IMAGE = UIImage (named: "ic-logo-white.png")
     static let LOGO_TOP_BAR_IMAGE = UIImage (named: "ic-logo-topbar.png")
     
     
@@ -169,10 +171,12 @@ class UniversalResources
         
         // split the text by the "Profile~" text
         let allProfiles = text.componentsSeparatedByString("Profile~")
-        
+        let nonemptyProfiles = allProfiles.filter { (x) -> Bool in
+            !x.isEmpty
+        }
         
         // loop through all the Profiles
-        for profile in allProfiles
+        for profile in nonemptyProfiles
         {
             // split the string up by type and value
             let typesAndValuesString = profile.componentsSeparatedByString("\n")
@@ -259,7 +263,7 @@ class UniversalResources
                     newProfile.birthday = typeValue[1]
                 }
                     // if this type is the interests
-                else if typeValue[0] == "Hobies"
+                else if typeValue[0] == "Hobbies"
                 {
                     // set the interests
                     newProfile.hobbies = typeValue[1]

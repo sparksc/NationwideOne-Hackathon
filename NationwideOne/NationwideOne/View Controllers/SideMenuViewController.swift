@@ -171,6 +171,9 @@ class SideMenuViewController: UIViewController
             navigationController.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
             navigationController.navigationBar.barStyle = UIBarStyle.Black
             
+            // set the current profile
+            profileViewController.currentProfile = UniversalResources.SIGNED_IN_PROFILE
+                
             // set up the view
             profileViewController.setUpView()
             
@@ -294,7 +297,7 @@ class SideMenuViewController: UIViewController
         nationwideOneTitleBarButton.frame = CGRect(x: 0, y: 0, width: revealViewController().rearViewRevealWidth, height: height)
         nationwideOneTitleBarButton.setTitleColor(UIColor.whiteColor(), forState: UIControlState())
         nationwideOneTitleBarButton.backgroundColor = UniversalResources.UI_APP_COLOR_TINT
-        nationwideOneTitleBarButton.setImage(UniversalResources.LOGO_TOP_BAR_IMAGE, forState: UIControlState.Normal)
+        nationwideOneTitleBarButton.setImage(UniversalResources.LOGO_WHITE_IMAGE, forState: UIControlState.Normal)
         nationwideOneTitleBarButton.contentVerticalAlignment = UIControlContentVerticalAlignment.Bottom
         nationwideOneTitleBarButton.enabled = false
         

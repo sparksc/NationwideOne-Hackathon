@@ -78,10 +78,10 @@
             </objects>
             <point key="canvasLocation" x="1176" y="2290"/>
         </scene>
-        <!--View Controller-->
+        <!--Anything Locator View Controller-->
         <scene sceneID="ZcZ-dh-qvL">
             <objects>
-                <viewController id="SgQ-9P-pYk" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AnythingLocatorViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="SgQ-9P-pYk" customClass="AnythingLocatorViewController" customModule="NationwideOne" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Wel-K7-Ioe"/>
                         <viewControllerLayoutGuide type="bottom" id="iHD-8J-gQl"/>

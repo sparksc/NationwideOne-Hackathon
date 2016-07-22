@@ -1,26 +1,28 @@
 //
-//  SideMenuTableViewCell.swift
+//  SMESearchTableViewCell.swift
 //  NationwideOne
 //
-//  Created by Cameron Hopkins on 7/21/16.
+//  Created by Cameron Hopkins on 7/22/16.
 //  Copyright © 2016 Cameron Hopkins. All rights reserved.
 //
 
 import Foundation
 import UIKit
 
-class SideMenuTableViewCell: UITableViewCell
+class SMESearchTableViewCell: UITableViewCell
 {
     // MARK: - all fields that relate to the internal class for public accessing
     
-    // the Label to describe the title of the menu item
-    var menuTitleLabel: UILabel!
+    // the Label to describe the name of the SME Search
+    var nameLabel: UILabel!
     
-    // the Label to describe the description of the menu item
-    var menuDescriptionLabel: UILabel!
+    // the Label to describe the description of the SME Search
+    var searchDescriptionLabel: UILabel!
     
-    // the Image View to describe the image of the menu item
-    var menuImageView: UIImageView!
+    // the Image View to describe the image of the SME Search
+    var userProfileImageImageView: UIImageView!
+    
+    
     
     
     // MARK: - all overrided functions that relate to the Table View Cell super class
@@ -45,24 +47,24 @@ class SideMenuTableViewCell: UITableViewCell
         contentView.backgroundColor = UIColor.whiteColor()
         
         // set up the two Labels needed to describe the menu options
-        menuTitleLabel = UILabel ()
-        menuTitleLabel.font = UIFont (name: UniversalResources.FONT_NAME_BOLD, size: 14)
-        menuTitleLabel.textColor = UIColor.blackColor()
-        menuTitleLabel.backgroundColor = UIColor.clearColor()
+        nameLabel = UILabel ()
+        nameLabel.font = UIFont (name: UniversalResources.FONT_NAME_BOLD, size: 14)
+        nameLabel.textColor = UIColor.blackColor()
+        nameLabel.backgroundColor = UIColor.clearColor()
         
-        menuDescriptionLabel = UILabel ()
-        menuDescriptionLabel.font = UIFont (name: UniversalResources.FONT_NAME_REGULAR, size: 12)
-        menuDescriptionLabel.textColor = UIColor.blackColor()
-        menuDescriptionLabel.backgroundColor = UIColor.clearColor()
+        searchDescriptionLabel = UILabel ()
+        searchDescriptionLabel.font = UIFont (name: UniversalResources.FONT_NAME_REGULAR, size: 12)
+        searchDescriptionLabel.textColor = UIColor.blackColor()
+        searchDescriptionLabel.backgroundColor = UIColor.clearColor()
         
         // set up the Image View of the menu item
-        menuImageView = UIImageView ()
-        menuImageView.backgroundColor = UIColor.clearColor()
+        userProfileImageImageView = UIImageView ()
+        userProfileImageImageView.backgroundColor = UIColor.clearColor()
         
         // add the subviews
-        contentView.addSubview(menuTitleLabel)
-        contentView.addSubview(menuDescriptionLabel)
-        contentView.addSubview(menuImageView)
+        contentView.addSubview(nameLabel)
+        contentView.addSubview(searchDescriptionLabel)
+        contentView.addSubview(userProfileImageImageView)
     }
     
     
@@ -74,19 +76,19 @@ class SideMenuTableViewCell: UITableViewCell
         super.layoutSubviews ()
         
         // position the frame for the menu image
-        menuImageView.frame = CGRectMake(10, contentView.bounds.height/2 - 10, 20, 20)
+        userProfileImageImageView.frame = CGRectMake(10, contentView.bounds.height/2 - 10, 20, 20)
         
         // the x position for the title and description
-        let xPos = menuImageView.frame.origin.x + menuImageView.frame.width + 10
+        let xPos = userProfileImageImageView.frame.origin.x + userProfileImageImageView.frame.width + 10
         
         // position the frame for the name
-        var size: CGSize = menuTitleLabel.text!.sizeWithAttributes ([NSFontAttributeName:  menuTitleLabel.font])
-        menuTitleLabel.frame = CGRect (x: xPos, y: 5, width: contentView.frame.width - 10, height: size.height)
+        var size: CGSize = nameLabel.text!.sizeWithAttributes ([NSFontAttributeName:  nameLabel.font])
+        nameLabel.frame = CGRect (origin: CGPoint (x: xPos, y: 5), size: size)
         
         // position the frame for the description
-        let bottom = menuTitleLabel.frame.origin.y + menuTitleLabel.frame.height
-        size = menuDescriptionLabel.text!.sizeWithAttributes ([NSFontAttributeName:  menuDescriptionLabel.font])
-        menuDescriptionLabel.frame = CGRect (origin: CGPoint (x: xPos, y: bottom + 5), size: size)
+        let bottom = nameLabel.frame.origin.y + nameLabel.frame.height
+        size = searchDescriptionLabel.text!.sizeWithAttributes ([NSFontAttributeName:  searchDescriptionLabel.font])
+        searchDescriptionLabel.frame = CGRect (origin: CGPoint (x: xPos, y: bottom + 5), size: size)
     }
     
     /// <summary>
@@ -99,14 +101,14 @@ class SideMenuTableViewCell: UITableViewCell
         if highlighted
         {
             // for all menu items, set the title color to be highlighted
-            menuTitleLabel.textColor = UniversalResources.UI_APP_COLOR_TINT
-            menuDescriptionLabel.textColor = UniversalResources.UI_APP_COLOR_TINT
+            nameLabel.textColor = UniversalResources.UI_APP_COLOR_TINT
+            searchDescriptionLabel.textColor = UniversalResources.UI_APP_COLOR_TINT
         }
         else
         {
             // for all menu items, set the title color to be unhighlighted
-            menuTitleLabel.textColor = UIColor.blackColor()
-            menuDescriptionLabel.textColor = UIColor.grayColor()
+            nameLabel.textColor = UIColor.blackColor()
+            searchDescriptionLabel.textColor = UIColor.grayColor()
         }
     }
     
@@ -125,11 +127,10 @@ class SideMenuTableViewCell: UITableViewCell
     func updateCell(menuTitle: String, menuDescription: String, menuImage: UIImage)
     {
         // update the Labels based on the menu item
-        menuTitleLabel.text = menuTitle
-        menuDescriptionLabel.text = menuDescription
+        nameLabel.text = menuTitle
+        searchDescriptionLabel.text = menuDescription
         
         // update the menu Image
-        menuImageView.image = menuImage
+        userProfileImageImageView.image = menuImage
     }
-    
 }

@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class HomeViewController: UIViewController
+class HomeViewController: UIViewController, UISearchBarDelegate
 {
     // MARK: - all fields that relate public accessing
     
@@ -313,6 +313,54 @@ class HomeViewController: UIViewController
     
     
     
+    // MARK: - all functions that relate to the search bar delegate
+    
+    /// <summary>
+    /// Determines if the search bar should begin editing
+    /// </summary>
+    func searchBarShouldBeginEditing(searchBar: UISearchBar) -> Bool {
+        
+        // if this is the start of a search
+        if searchBar.text == "I need help with..."
+        {
+            // clear the text
+            searchBar.text = ""
+        }
+        
+        return true
+    }
+    
+    /// <summary>
+    /// Determines if the search bar should end editing
+    /// </summary>
+    func searchBarShouldEndEditing(searchBar: UISearchBar) -> Bool {
+        
+        // if the user didn't enter text
+        if searchBar.text == ""
+        {
+            // set the text
+            searchBar.text = "I need help with..."
+        }
+        
+        return true
+    }
+    
+    /// <summary>
+    /// When the search Button is clicked.
+    /// </summary>
+    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
+        
+        // for presenting instatiate the View Controller
+        let smeSearchListViewController = UniversalResources.STORYBOARD.instantiateViewControllerWithIdentifier("SMESearchListViewController") as! SMESearchListViewController
+        
+        // push the View Controller and set up the View
+        self.navigationController?.pushViewController(smeSearchListViewController, animated: true)
+        smeSearchListViewController.currentText = searchBar.text!
+        smeSearchListViewController.setUpView()
+    }
+
+    
+    
     
     // MARK: - all functions that relate to the internal class for public accessing
     
@@ -475,7 +523,7 @@ class HomeViewController: UIViewController
     {
         // set up a tmp view
         let tmpImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 10, height: 44))
-        tmpImageView.image = UniversalResources.LOGO_TOP_BAR_IMAGE
+        tmpImageView.image = UniversalResources.LOGO_WHITE_IMAGE
         
         // set up the attributes of the navigation controller
         navigationController?.navigationBar.barTintColor = UniversalResources.UI_APP_COLOR_TINT
@@ -540,7 +588,8 @@ class HomeViewController: UIViewController
         // set up the frame
         let width = 3*view.frame.width/4
         SMESearchBar.frame = CGRect(x: view.center.x - width/2, y: 20, width: width, height: 30)
-        SMESearchBar.text = "I need help with..."
+        SMESearchBar.text = "Software" //"I need help with..."
+        SMESearchBar.delegate = self
         
         // add the Views
         view.addSubview(SMESearchBar)

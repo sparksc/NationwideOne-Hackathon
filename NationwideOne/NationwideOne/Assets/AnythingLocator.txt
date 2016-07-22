@@ -1,0 +1,2 @@
+Plaza 1:Floor1,Floor2,Floor3
+Plaza 3:Floor1,Floor2,Floor3

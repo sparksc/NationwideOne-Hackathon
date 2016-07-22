@@ -56,6 +56,13 @@
 		71FBB5341D41E6AD00A9F947 /* ic-checked-check-box@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 71FBB5331D41E6AD00A9F947 /* ic-checked-check-box@2x.png */; };
 		71FBB5361D41E7A200A9F947 /* ic-unchecked-check-box@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 71FBB5351D41E7A200A9F947 /* ic-unchecked-check-box@2x.png */; };
 		71FBB5381D41F1C200A9F947 /* SMESearchListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71FBB5371D41F1C200A9F947 /* SMESearchListViewController.swift */; };
+		71FBB53A1D41F55200A9F947 /* SMESearchTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71FBB5391D41F55200A9F947 /* SMESearchTableViewDataSource.swift */; };
+		71FBB53C1D42016400A9F947 /* SMESearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71FBB53B1D42016400A9F947 /* SMESearchTableViewCell.swift */; };
+		71FBB53E1D420D0A00A9F947 /* ic-logo-blue.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 71FBB53D1D420D0A00A9F947 /* ic-logo-blue.jpg */; };
+		71FBB5401D4213A500A9F947 /* ic-logo-white.png in Resources */ = {isa = PBXBuildFile; fileRef = 71FBB53F1D4213A500A9F947 /* ic-logo-white.png */; };
+		71FBB5421D42145300A9F947 /* AnythingLocatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71FBB5411D42145300A9F947 /* AnythingLocatorViewController.swift */; };
+		71FBB5451D42156100A9F947 /* PickerViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71FBB5441D42156100A9F947 /* PickerViewDataSource.swift */; };
+		71FBB5471D421F1700A9F947 /* AnythingLocator.txt in Resources */ = {isa = PBXBuildFile; fileRef = 71FBB5461D421F1700A9F947 /* AnythingLocator.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -112,6 +119,13 @@
 		71FBB5331D41E6AD00A9F947 /* ic-checked-check-box@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic-checked-check-box@2x.png"; sourceTree = "<group>"; };
 		71FBB5351D41E7A200A9F947 /* ic-unchecked-check-box@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic-unchecked-check-box@2x.png"; sourceTree = "<group>"; };
 		71FBB5371D41F1C200A9F947 /* SMESearchListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SMESearchListViewController.swift; sourceTree = "<group>"; };
+		71FBB5391D41F55200A9F947 /* SMESearchTableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SMESearchTableViewDataSource.swift; sourceTree = "<group>"; };
+		71FBB53B1D42016400A9F947 /* SMESearchTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SMESearchTableViewCell.swift; sourceTree = "<group>"; };
+		71FBB53D1D420D0A00A9F947 /* ic-logo-blue.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "ic-logo-blue.jpg"; sourceTree = "<group>"; };
+		71FBB53F1D4213A500A9F947 /* ic-logo-white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic-logo-white.png"; sourceTree = "<group>"; };
+		71FBB5411D42145300A9F947 /* AnythingLocatorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnythingLocatorViewController.swift; sourceTree = "<group>"; };
+		71FBB5441D42156100A9F947 /* PickerViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerViewDataSource.swift; sourceTree = "<group>"; };
+		71FBB5461D421F1700A9F947 /* AnythingLocator.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AnythingLocator.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +162,7 @@
 				710CAF1F1D4157970003EA87 /* Assets */,
 				718EBBCC1D417D9A0071740A /* Bridger Files */,
 				718EBBB01D4171350071740A /* Cache */,
+				71FBB5431D4214D000A9F947 /* Custom Picker View Data Source */,
 				710CAF221D4158560003EA87 /* Custom Table View Data Source and Cell */,
 				710CAF231D4158630003EA87 /* Images */,
 				710CAF241D4158690003EA87 /* SWRevealViewController */,
@@ -169,6 +184,7 @@
 				718EBBB41D4171840071740A /* ContactUsIssues.txt */,
 				718EBBB51D4171840071740A /* MenuItems.txt */,
 				718EBBB61D4171840071740A /* Profiles.txt */,
+				71FBB5461D421F1700A9F947 /* AnythingLocator.txt */,
 			);
 			name = Assets;
 			path = NationwideOne/Assets;
@@ -188,6 +204,8 @@
 			children = (
 				718EBBBF1D41744F0071740A /* SideMenuTableViewCell.swift */,
 				718EBBC11D4174610071740A /* SideMenuTableViewDataSource.swift */,
+				71FBB5391D41F55200A9F947 /* SMESearchTableViewDataSource.swift */,
+				71FBB53B1D42016400A9F947 /* SMESearchTableViewCell.swift */,
 			);
 			name = "Custom Table View Data Source and Cell";
 			path = "NationwideOne/Custom Table View Data Source and Cell";
@@ -232,6 +250,7 @@
 				718EBBBD1D4174160071740A /* SideMenuViewController.swift */,
 				71FBB5211D41C93000A9F947 /* ProfileViewController.swift */,
 				71FBB5371D41F1C200A9F947 /* SMESearchListViewController.swift */,
+				71FBB5411D42145300A9F947 /* AnythingLocatorViewController.swift */,
 			);
 			name = "View Controllers";
 			path = "NationwideOne/View Controllers";
@@ -240,6 +259,8 @@
 		710CAF511D415EA50003EA87 /* Icons */ = {
 			isa = PBXGroup;
 			children = (
+				71FBB53F1D4213A500A9F947 /* ic-logo-white.png */,
+				71FBB53D1D420D0A00A9F947 /* ic-logo-blue.jpg */,
 				71FBB5351D41E7A200A9F947 /* ic-unchecked-check-box@2x.png */,
 				71FBB5331D41E6AD00A9F947 /* ic-checked-check-box@2x.png */,
 				71FBB5311D41DE5400A9F947 /* ic-rss-feed@2x.png */,
@@ -297,6 +318,15 @@
 			);
 			name = "iPhone Icons";
 			path = "NationwideOne/Images/iPhone Icons";
+			sourceTree = SOURCE_ROOT;
+		};
+		71FBB5431D4214D000A9F947 /* Custom Picker View Data Source */ = {
+			isa = PBXGroup;
+			children = (
+				71FBB5441D42156100A9F947 /* PickerViewDataSource.swift */,
+			);
+			name = "Custom Picker View Data Source";
+			path = "NationwideOne/Custom Picker View Data Source";
 			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */
@@ -362,16 +392,19 @@
 				718EBBC91D41793E0071740A /* ic-circle-check-app-color@2x.png in Resources */,
 				71FBB5201D41C7DE00A9F947 /* ic-logo-topbar.png in Resources */,
 				718EBBBA1D4171840071740A /* Profiles.txt in Resources */,
+				71FBB53E1D420D0A00A9F947 /* ic-logo-blue.jpg in Resources */,
 				718EBBE61D419B300071740A /* nationwide-one-loading-2.png in Resources */,
 				71FBB5301D41CD1100A9F947 /* ic-sign-out@2x.png in Resources */,
 				710CAF541D415F4B0003EA87 /* nationwide-one-blue-background.jpg in Resources */,
 				71FBB5361D41E7A200A9F947 /* ic-unchecked-check-box@2x.png in Resources */,
 				718EBBB91D4171840071740A /* MenuItems.txt in Resources */,
 				718EBBE41D4199F40071740A /* ic-nationwide-one.png in Resources */,
+				71FBB5471D421F1700A9F947 /* AnythingLocator.txt in Resources */,
 				71FBB5261D41CCF600A9F947 /* ic-contact@2x.png in Resources */,
 				71361C531D41B1FF000DC6DA /* ic-message@2x.png in Resources */,
 				71361C4D1D41B1EE000DC6DA /* ic-calendar@2x.png in Resources */,
 				71FBB5321D41DE5400A9F947 /* ic-rss-feed@2x.png in Resources */,
+				71FBB5401D4213A500A9F947 /* ic-logo-white.png in Resources */,
 				718EBBE81D419EAC0071740A /* nationwide-one-loading-iPad.png in Resources */,
 				71FBB5281D41CCFB00A9F947 /* ic-e-biz@2x.png in Resources */,
 				718EBBB81D4171840071740A /* ContactUsIssues.txt in Resources */,
@@ -412,8 +445,12 @@
 				718EBBC01D41744F0071740A /* SideMenuTableViewCell.swift in Sources */,
 				71FBB5221D41C93000A9F947 /* ProfileViewController.swift in Sources */,
 				710CAF4C1D415BA40003EA87 /* SignInViewController.swift in Sources */,
+				71FBB53C1D42016400A9F947 /* SMESearchTableViewCell.swift in Sources */,
 				718EBBBE1D4174160071740A /* SideMenuViewController.swift in Sources */,
+				71FBB5451D42156100A9F947 /* PickerViewDataSource.swift in Sources */,
 				718EBBC21D4174610071740A /* SideMenuTableViewDataSource.swift in Sources */,
+				71FBB5421D42145300A9F947 /* AnythingLocatorViewController.swift in Sources */,
+				71FBB53A1D41F55200A9F947 /* SMESearchTableViewDataSource.swift in Sources */,
 				71FBB5381D41F1C200A9F947 /* SMESearchListViewController.swift in Sources */,
 				710CAF4E1D415DAC0003EA87 /* UniversalResources.swift in Sources */,
 				718EBBBC1D4172750071740A /* HomeViewController.swift in Sources */,

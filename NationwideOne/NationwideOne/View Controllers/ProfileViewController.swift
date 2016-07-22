@@ -11,6 +11,13 @@ import UIKit
 
 class ProfileViewController: UIViewController, UITextViewDelegate
 {
+    // MARK: - all fields that relate public accessing
+    
+    // the UserProfile that holds profile that is loaded
+    var currentProfile: UserProfile!
+    
+    
+    
     // MARK: - all fields that relate to the UI View
     
     // this represent the Navigation Bar Button Item that will take the user back to the last View
@@ -260,7 +267,7 @@ class ProfileViewController: UIViewController, UITextViewDelegate
                 {
                     // set the text to the start value
                     aboutMeTextView.text = "About Me"
-                    aboutMeTextView.textColor = UIColor.grayColor()
+                    aboutMeTextView.textColor = UIColor.whiteColor()
                 }
                 
                 // scroll the View to account for the keyboard
@@ -278,7 +285,7 @@ class ProfileViewController: UIViewController, UITextViewDelegate
                 {
                     // set the text to the start value
                     specialtiesTextView.text = "Specialties"
-                    specialtiesTextView.textColor = UIColor.grayColor()
+                    specialtiesTextView.textColor = UIColor.whiteColor()
                 }
                 
                 // scroll the View to account for the keyboard
@@ -296,7 +303,7 @@ class ProfileViewController: UIViewController, UITextViewDelegate
                 {
                     // set the text to the start value
                     hobbiesTextView.text = "Hobbies"
-                    hobbiesTextView.textColor = UIColor.grayColor()
+                    hobbiesTextView.textColor = UIColor.whiteColor()
                 }
                 
                 // scroll the View to account for the keyboard
@@ -494,6 +501,14 @@ class ProfileViewController: UIViewController, UITextViewDelegate
             specialtiesTextView.editable = true
             hobbiesTextView.editable = true
             
+            aboutMeTextView.backgroundColor = UIColor.whiteColor()
+            specialtiesTextView.backgroundColor = UIColor.whiteColor()
+            hobbiesTextView.backgroundColor = UIColor.whiteColor()
+            
+            aboutMeTextView.textColor = UIColor.blackColor()
+            specialtiesTextView.textColor = UIColor.blackColor()
+            hobbiesTextView.textColor = UIColor.blackColor()
+            
             // set a new text to the Bar Button Items
             navigationItem.rightBarButtonItems?[0].title = "Done"
             
@@ -506,6 +521,14 @@ class ProfileViewController: UIViewController, UITextViewDelegate
             aboutMeTextView.editable = false
             specialtiesTextView.editable = false
             hobbiesTextView.editable = false
+            
+            aboutMeTextView.backgroundColor = UIColor.lightGrayColor()
+            specialtiesTextView.backgroundColor = UIColor.lightGrayColor()
+            hobbiesTextView.backgroundColor = UIColor.lightGrayColor()
+            
+            aboutMeTextView.textColor = UIColor.whiteColor()
+            specialtiesTextView.textColor = UIColor.whiteColor()
+            hobbiesTextView.textColor = UIColor.whiteColor()
             
             // set a new text to the Bar Button Items
             navigationItem.rightBarButtonItems?[0].title = "Edit"
@@ -830,7 +853,7 @@ class ProfileViewController: UIViewController, UITextViewDelegate
     {
         // set up a tmp view
         let tmpImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 10, height: 44))
-        tmpImageView.image = UniversalResources.LOGO_TOP_BAR_IMAGE
+        tmpImageView.image = UniversalResources.LOGO_WHITE_IMAGE
         
         // set up the attributes of the navigation controller
         navigationController?.navigationBar.barTintColor = UniversalResources.UI_APP_COLOR_TINT
@@ -849,7 +872,12 @@ class ProfileViewController: UIViewController, UITextViewDelegate
         // set the left and right Bar Button Items
         navigationItem.setLeftBarButtonItem(backBarButtonItem, animated: true)
         navigationItem.rightBarButtonItems?.removeAll()
-        navigationItem.setRightBarButtonItem(editBarButtonItem, animated: true)
+        
+        // if this is the same user's profile
+        if currentProfile == UniversalResources.SIGNED_IN_PROFILE
+        {
+            navigationItem.setRightBarButtonItem(editBarButtonItem, animated: true)
+        }
     }
 
     /// <summary>
@@ -888,10 +916,10 @@ class ProfileViewController: UIViewController, UITextViewDelegate
         // set up the Text View and the attributes
         usernameTextView = UITextView (frame: frameSize)
         usernameTextView.font = UIFont (name: UniversalResources.FONT_NAME_REGULAR, size: 10)
-        usernameTextView.text = UniversalResources.SIGNED_IN_PROFILE.name
-        usernameTextView.textColor = UIColor.lightGrayColor()
+        usernameTextView.text = currentProfile.name
+        usernameTextView.textColor = UIColor.whiteColor()
         usernameTextView.tintColor = UIColor.blackColor()
-        usernameTextView.backgroundColor = UIColor.grayColor()
+        usernameTextView.backgroundColor = UIColor.lightGrayColor()
         usernameTextView.layer.borderColor = UniversalResources.CG_APP_COLOR_TINT
         usernameTextView.layer.cornerRadius = 5
         usernameTextView.layer.borderWidth = 1
@@ -906,10 +934,10 @@ class ProfileViewController: UIViewController, UITextViewDelegate
         // set up the Text View and the attributes
         workPhoneTextView = UITextView (frame: frameSize)
         workPhoneTextView.font = UIFont (name: UniversalResources.FONT_NAME_REGULAR, size: 10)
-        workPhoneTextView.text = UniversalResources.SIGNED_IN_PROFILE.workPhone
-        workPhoneTextView.textColor = UIColor.lightGrayColor()
+        workPhoneTextView.text = currentProfile.workPhone
+        workPhoneTextView.textColor = UIColor.whiteColor()
         workPhoneTextView.tintColor = UIColor.blackColor()
-        workPhoneTextView.backgroundColor = UIColor.grayColor()
+        workPhoneTextView.backgroundColor = UIColor.lightGrayColor()
         workPhoneTextView.layer.borderColor = UniversalResources.CG_APP_COLOR_TINT
         workPhoneTextView.layer.cornerRadius = 5
         workPhoneTextView.layer.borderWidth = 1
@@ -925,10 +953,10 @@ class ProfileViewController: UIViewController, UITextViewDelegate
         // set up the Text View and the attributes
         emailTextView = UITextView (frame: frameSize)
         emailTextView.font = UIFont (name: UniversalResources.FONT_NAME_REGULAR, size: 10)
-        emailTextView.text = UniversalResources.SIGNED_IN_PROFILE.workEmail
-        emailTextView.textColor = UIColor.lightGrayColor()
+        emailTextView.text = currentProfile.workEmail
+        emailTextView.textColor = UIColor.whiteColor()
         emailTextView.tintColor = UIColor.blackColor()
-        emailTextView.backgroundColor = UIColor.grayColor()
+        emailTextView.backgroundColor = UIColor.lightGrayColor()
         emailTextView.layer.borderColor = UniversalResources.CG_APP_COLOR_TINT
         emailTextView.layer.cornerRadius = 5
         emailTextView.layer.borderWidth = 1
@@ -943,10 +971,10 @@ class ProfileViewController: UIViewController, UITextViewDelegate
         // set up the Text View and the attributes
         managerTextView = UITextView (frame: frameSize)
         managerTextView.font = UIFont (name: UniversalResources.FONT_NAME_REGULAR, size: 10)
-        managerTextView.text = UniversalResources.SIGNED_IN_PROFILE.manager
-        managerTextView.textColor = UIColor.lightGrayColor()
+        managerTextView.text = currentProfile.manager
+        managerTextView.textColor = UIColor.whiteColor()
         managerTextView.tintColor = UIColor.blackColor()
-        managerTextView.backgroundColor = UIColor.grayColor()
+        managerTextView.backgroundColor = UIColor.lightGrayColor()
         managerTextView.layer.borderColor = UniversalResources.CG_APP_COLOR_TINT
         managerTextView.layer.cornerRadius = 5
         managerTextView.layer.borderWidth = 1
@@ -962,10 +990,10 @@ class ProfileViewController: UIViewController, UITextViewDelegate
         // set up the Text View and the attributes
         titleTextView = UITextView (frame: frameSize)
         titleTextView.font = UIFont (name: UniversalResources.FONT_NAME_REGULAR, size: 10)
-        titleTextView.text = UniversalResources.SIGNED_IN_PROFILE.title
-        titleTextView.textColor = UIColor.lightGrayColor()
+        titleTextView.text = currentProfile.title
+        titleTextView.textColor = UIColor.whiteColor()
         titleTextView.tintColor = UIColor.blackColor()
-        titleTextView.backgroundColor = UIColor.grayColor()
+        titleTextView.backgroundColor = UIColor.lightGrayColor()
         titleTextView.layer.borderColor = UniversalResources.CG_APP_COLOR_TINT
         titleTextView.layer.cornerRadius = 5
         titleTextView.layer.borderWidth = 1
@@ -980,10 +1008,10 @@ class ProfileViewController: UIViewController, UITextViewDelegate
         // set up the Text View and the attributes
         roleTextView = UITextView (frame: frameSize)
         roleTextView.font = UIFont (name: UniversalResources.FONT_NAME_REGULAR, size: 10)
-        roleTextView.text = UniversalResources.SIGNED_IN_PROFILE.role
-        roleTextView.textColor = UIColor.lightGrayColor()
+        roleTextView.text = currentProfile.role
+        roleTextView.textColor = UIColor.whiteColor()
         roleTextView.tintColor = UIColor.blackColor()
-        roleTextView.backgroundColor = UIColor.grayColor()
+        roleTextView.backgroundColor = UIColor.lightGrayColor()
         roleTextView.layer.borderColor = UniversalResources.CG_APP_COLOR_TINT
         roleTextView.layer.cornerRadius = 5
         roleTextView.layer.borderWidth = 1
@@ -999,10 +1027,10 @@ class ProfileViewController: UIViewController, UITextViewDelegate
         // set up the Text View and the attributes
         locationTextView = UITextView (frame: frameSize)
         locationTextView.font = UIFont (name: UniversalResources.FONT_NAME_REGULAR, size: 10)
-        locationTextView.text = UniversalResources.SIGNED_IN_PROFILE.location
-        locationTextView.textColor = UIColor.lightGrayColor()
+        locationTextView.text = currentProfile.location
+        locationTextView.textColor = UIColor.whiteColor()
         locationTextView.tintColor = UIColor.blackColor()
-        locationTextView.backgroundColor = UIColor.grayColor()
+        locationTextView.backgroundColor = UIColor.lightGrayColor()
         locationTextView.layer.borderColor = UniversalResources.CG_APP_COLOR_TINT
         locationTextView.layer.cornerRadius = 5
         locationTextView.layer.borderWidth = 1
@@ -1028,7 +1056,7 @@ class ProfileViewController: UIViewController, UITextViewDelegate
     {
         // width and height
         let width: CGFloat = view.frame.width/2
-        let height: CGFloat = 30
+        let height: CGFloat = 40
         
         // x and y position
         var yPos: CGFloat = locationTextView.frame.origin.y + locationTextView.frame.height + 10
@@ -1040,10 +1068,10 @@ class ProfileViewController: UIViewController, UITextViewDelegate
         // set up the Text View and the attributes
         aboutMeTextView = UITextView (frame: frameSize)
         aboutMeTextView.font = UIFont (name: UniversalResources.FONT_NAME_REGULAR, size: 10)
-        aboutMeTextView.text = UniversalResources.SIGNED_IN_PROFILE.aboutMe
-        aboutMeTextView.textColor = UIColor.lightGrayColor()
+        aboutMeTextView.text = currentProfile.aboutMe
+        aboutMeTextView.textColor = UIColor.whiteColor()
         aboutMeTextView.tintColor = UIColor.blackColor()
-        aboutMeTextView.backgroundColor = UIColor.whiteColor()
+        aboutMeTextView.backgroundColor = UIColor.lightGrayColor()
         aboutMeTextView.layer.borderColor = UniversalResources.CG_APP_COLOR_TINT
         aboutMeTextView.layer.cornerRadius = 5
         aboutMeTextView.layer.borderWidth = 1
@@ -1059,10 +1087,10 @@ class ProfileViewController: UIViewController, UITextViewDelegate
         // set up the Text View and the attributes
         specialtiesTextView = UITextView (frame: frameSize)
         specialtiesTextView.font = UIFont (name: UniversalResources.FONT_NAME_REGULAR, size: 10)
-        specialtiesTextView.text = UniversalResources.SIGNED_IN_PROFILE.specialties
-        specialtiesTextView.textColor = UIColor.lightGrayColor()
+        specialtiesTextView.text = currentProfile.specialties
+        specialtiesTextView.textColor = UIColor.whiteColor()
         specialtiesTextView.tintColor = UIColor.blackColor()
-        specialtiesTextView.backgroundColor = UIColor.whiteColor()
+        specialtiesTextView.backgroundColor = UIColor.lightGrayColor()
         specialtiesTextView.layer.borderColor = UniversalResources.CG_APP_COLOR_TINT
         specialtiesTextView.layer.cornerRadius = 5
         specialtiesTextView.layer.borderWidth = 1
@@ -1078,10 +1106,10 @@ class ProfileViewController: UIViewController, UITextViewDelegate
         // set up the Text View and the attributes
         hobbiesTextView = UITextView (frame: frameSize)
         hobbiesTextView.font = UIFont (name: UniversalResources.FONT_NAME_REGULAR, size: 10)
-        hobbiesTextView.text = UniversalResources.SIGNED_IN_PROFILE.hobbies
-        hobbiesTextView.textColor = UIColor.lightGrayColor()
+        hobbiesTextView.text = currentProfile.hobbies
+        hobbiesTextView.textColor = UIColor.whiteColor()
         hobbiesTextView.tintColor = UIColor.blackColor()
-        hobbiesTextView.backgroundColor = UIColor.whiteColor()
+        hobbiesTextView.backgroundColor = UIColor.lightGrayColor()
         hobbiesTextView.layer.borderColor = UniversalResources.CG_APP_COLOR_TINT
         hobbiesTextView.layer.cornerRadius = 5
         hobbiesTextView.layer.borderWidth = 1
